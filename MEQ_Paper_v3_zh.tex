@@ -1,0 +1,520 @@
+\documentclass[UTF8,11pt,a4paper]{ctexart}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\newcommand{\meq}{MEQ}
+\newcommand{\um}{\,\mu\mathrm{m}}
+
+\title{最小能量量子（MEQ）框架：\\涌现光速基底的现象学提案}
+\author{Roger Wang（王彦翔）\\[2pt]
+\small 清华大学 x-lab（深圳）；ALAYA Tech（北京）\\
+\small 通讯作者：wanyanx14@tsinghua.org.cn}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+最小能量量子（MEQ）框架是一项现象学提案：假设物质与引力源自单一种类、以光速运动的无质量基元的集体现象。本文陈述其基本假设和示意性的动力学描述，并指出要从模型推导有效度规及其与物质的耦合，尚缺少哪些动力学要素。特别地，本文将爱因斯坦方程视为一种可能的低能匹配条件，而非本模型已经得到的结果。我们讨论四种有条件的实验信号：短程 Yukawa 型引力修正、真空双折射的额外贡献、可能与交换过程相关的质量漂移，以及与星系演化阶段相关的信号。前两项给出基于理想化几何和明确归一化方式的示意灵敏度估算。后两项仍属猜想：微观交换如何映射为可观测质量漂移，以及如何得到定量的星系尺度预言，目前尚未明确。现有实验约束这些现象学参数化，但并不构成对所提基底的验证。因此，该框架目前是一项研究纲领；其可行性取决于能否建立封闭的微观理论、使其匹配已确立的低能物理，并检验这些条件性信号。
+\end{abstract}
+
+\noindent\textbf{关键词：}量子引力；涌现引力；诱导引力；动理论；等效原理；暗物质；实验检验
+
+\tableofcontents
+
+\section{引言}\label{sec:intro}
+
+\subsection{问题背景}
+
+量子场论（QFT）和广义相对论（GR）是基础物理学中居于核心地位且经过实验检验的理论框架；但其标准表述尚未提供对动力学时空的完整量子描述。QFT 可以在弯曲背景上建立，而 GR 将度规本身作为动力学变量；如何协调这两种描述仍是开放问题。爱因斯坦--希尔伯特作用量的微扰量子化按幂次计数不可重整化。弦/M 理论、圈量子引力、渐近安全、因果动力学三角剖分和全息等多个结构化研究方向仍在探索可能的解决方案；目前尚无一种方案由实验唯一选定\cite{Rovelli2015,Polchinski1998,Reuter1998,Loll2020,Batista2025}。
+
+以下三项经验事实使问题更加具体，但并未解决它：
+\begin{enumerate}
+\item \textbf{自由落体具有高度普适性。}MICROSCOPE 将钛与铂试验体之间的差分加速度约束在 $10^{-15}$ 量级\cite{Touboul2022}；月球激光测距也检验引力自能的响应\cite{Williams2004}。这些结果限制了对普适耦合的偏离。
+\item \textbf{引力波的传播速度与 $c$ 一致。}引力波与伽马射线联合观测 GW170817 对两者传播速度之差给出了严格限制\cite{GW170817}。仅凭这一结果，不能确定引力自由度的微观本质或完整偏振结构。
+\item \textbf{光子传播受到严格约束。}伽马射线观测限制了特定形式的能量依赖色散，具体限值取决于所假设的传播模型\cite{Abdo2009,Vasileiou2013}。这些界限约束基底模型，但并未排除所有可能的基底相互作用。
+\end{enumerate}
+这些观测为基底模型提供约束动机，但并不能证明基底存在。本文将它们作为基准，而非该提案的证据。
+
+\subsection{思想脉络}
+
+引力源自更基本介质集体行为的想法有着悠久的发展历史：
+\begin{itemize}
+\item \textbf{勒萨日（Le Sage，1784）}以及更早的 Fatio de Duillier 曾提出由各向同性微粒流产生“推力引力”，物体通过遮蔽通量而相互吸引。有关非弹性截获的分析提出了严重的加热问题；拉普拉斯型的光行差论证则约束非协变的延迟通量模型\cite{LeSage2002,Poincare1908}。这些问题针对的是特定通量模型。仅有弹性散射并不能解决问题；可行模型还必须证明能量平衡、阻力足够小以及轨道动力学稳定。
+\item \textbf{萨哈罗夫（Sakharov，1968）}提出，可以在弯曲时空的量子场有效作用量中诱导出爱因斯坦--希尔伯特项\cite{Sakharov1968}。这是引力有效场论的一种动机，但并非对本文基底的推导\cite{Donoghue1994}。
+\item \textbf{Jacobson（1995）}将爱因斯坦方程推导为局域 Rindler 视界上的状态方程\cite{Jacobson1995}；\textbf{Verlinde（2010）}则从熵的角度重新表述引力\cite{Verlinde2011}。Volovik 及模拟引力研究表明，在凝聚态基底（如超流 $^3$He）中，低能现象可呈现有效度规、视界和类洛伦兹时空\cite{Volovik2003,Barcelo2005}。
+\item \textbf{超流真空理论}（Sinha、Sivaram、Sudarshan；Zloshchastiev）将粒子视为超流真空中的准粒子\cite{Sinha1976,Zloshchastiev2011}。
+\end{itemize}
+本文的 MEQ 提案属于这一广泛研究脉络。它的基本假设为：
+\begin{itemize}
+\item \textbf{（P1）单一基元。}提案假设只存在一种基本量子，称为“最小能量量子”（MEQ），以 $c$ 运动并通过弹性碰撞相互作用。本文未定义其最小能量值或能谱；该名称仅用于标识这一假设。
+\item \textbf{（P2）物质由束缚态构成。}假设观测到的粒子是基底的集体、束缚或拓扑构型；本文未推导出完整粒子谱。
+\item \textbf{（P3）引力是集体场。}假设引力场是基底的集体自由度，由物质和基底应力能共同源起。
+\item \textbf{（P4）时空涌现。}猜想操作意义上的时空及其有效对称性源自该基底；本文尚未推导这一点。
+\end{itemize}
+
+\subsection{本文的工作范围}
+
+本文的目标仅限于以下三项：
+\begin{enumerate}
+\item \textbf{陈述}该框架的基本假设和示意性动力学描述，并将其与尚待补充的微观动力学区分开来（第~\ref{sec:kinetic} 节）。
+\item \textbf{概述}相关观测约束，并说明它们检验的是哪些假设；不把对若干选定界限的相容性误称为对全部数据的拟合（第~\ref{sec:exp} 节）。
+\item \textbf{提出}四种条件性的现象学信号，并为其中两项给出示意估算（第~\ref{sec:pred} 节及附录~\ref{app:quant}）。
+\end{enumerate}
+本文是一篇假说性论文，而非完成的理论。以下方程并未定义封闭的微观模型，所引入的参数也未从模型中推导出来。因此，这些参数化有助于组织可能的实验检验，但不能证明该框架与所有现有数据相容，也不能证明其预言区别于 GR 或 QED 的所有扩展。
+
+\section{概念基础}\label{sec:concept}
+
+\subsection{操作意义上的时空}
+
+一种启发性的解释是操作主义的：空间和时间的测量由物理装置完成，而光信号是重要的校准手段。但这一观察本身并不能推导时空对称性。具体而言：
+\begin{enumerate}
+\item \textbf{光速不变性}是该提案必须复现的经验性质。使用光学装置并不能单独证明所有惯性系中的光速不变；这需要适当的基底动力学，并要求其低能极限符合实验。
+\item \textbf{最小可测尺度}只有在基底具有有限关联长度或分辨尺度 $\ell_\ast$，且操作性观测量继承该尺度时才可能出现。本文未推导这两项性质。这一可能性在概念上不同于圈量子引力中几何算符的量子化\cite{Rovelli2015}。
+\item \textbf{有效度规}可用于描述集体背景中的传播。要将该度规与 GR 中的度规联系起来，必须给出动力学方程和物质耦合；仅凭操作性解释无法确定这些内容\cite{Volovik2003,Donoghue1994}。
+\end{enumerate}
+
+\subsection{基本假设}
+
+以下将 MEQ 假设列为未来模型需要定量化的前提：
+\begin{itemize}
+\item \textbf{A1（基底）。}存在一个普适量子场 $\psi$，其量子无质量（$E=|\mathbf p|c$），相互作用在主阶近似下表现为弹性散射。
+\item \textbf{A2（物质涌现）。}假设观测到的粒子谱，包括自旋为 $0$、$\tfrac12$ 和 $1$ 的激发，都源于 $\psi$ 的集体、束缚或拓扑构型。第~\ref{sec:fermions} 节所述机制只是类比，并未构造出由该基底组成的已知费米子。
+\item \textbf{A3（引力涌现）。}假设引力场 $g_{\mu\nu}$ 是基底的集体平均场。可行的具体实现必须明确其自洽条件，并证明其低能极限包含爱因斯坦方程。
+\item \textbf{A4（有效场论匹配）。}在远低于基底能标 $E_\ast\sim\hbar c/\ell_\ast$ 的能量下，该框架须复现标准模型和 GR 已检验的预言；所有修正都须由匹配后的有效理论给出。
+\end{itemize}
+A2 是链条中发展最不充分的一环。特定模型中的孤子量子化以及 $2+1$ 维中的流量--电荷复合体，展示了非平凡统计性质可能产生的机制\cite{Skyrme1962,Goldstone1981,Wilczek1982}；但这些工作都没有给出所需的 $3+1$ 维构造，无法从所提单一基底得到观测到的手征规范谱。这仍是开放问题（第~\ref{sec:open} 节）。
+
+\subsection{观测量的分类}
+
+为便于讨论，可将观测对象区分为：\textbf{（i）直接探测到的量子}（例如光子）；\textbf{（ii）通过相互作用推断的粒子}（包括普通物质）；以及\textbf{（iii）由效应推断的场}（包括引力场）。若要以基底取代既有实体，就必须复现它们在实验上的作用；仅仅减少假设数量并不能成为支持这种替代的证据。
+
+\section{动力学框架}\label{sec:kinetic}
+
+\subsection{动力学假设与守恒}
+
+作为示意性出发点，令 $f(x,p)$ 表示定义在未来指向无质量动量壳 $p^\mu p_\mu=0$、$p^0>0$ 上的分布函数。取坐标 $x^0=ct$，度规号差为 $(-,+,+,+)$。基底应力能张量可按常见动理论形式定义为
+\begin{equation}
+T_{\rm sub}^{\mu\nu}(x)=\int dP\,p^\mu p^\nu f(x,p),
+\end{equation}
+其中 $dP$ 是动量壳上的不变测度，$f$ 的归一化选取为使 $T_{\rm sub}^{\mu\nu}$ 具有能量密度的量纲。相应的 Boltzmann 方程示意写为
+\begin{equation}
+p^\mu\partial_\mu f=C[f,\mathcal{F}],
+\end{equation}
+其中碰撞项 $C$ 和集体场 $\mathcal{F}$ 尚未指定。若基底碰撞项孤立作用，局域守恒需满足 $\int dP\,p^\nu C[f,\mathcal{F}]=0$；若物质与基底交换能量动量，则只有两者的总应力能张量才可能守恒。单次碰撞具有弹性，并不自动意味着相互作用介质中没有加热或阻力。证明这些性质需要微观碰撞核、稳定平衡态，以及能量与动量传递的计算。因此，这些方程只是一个假设框架，而非封闭的动理论；勒萨日模型面临的问题仍是待解决的约束，并未由本文的基本假设消除。
+
+\subsection{平均场自洽性：诱导引力}\label{sec:induced}
+
+为描述可能的低能极限，引入有效度规 $g_{\mu\nu}$，并将一般协变的场方程写成导数展开形式：
+\begin{equation}
+G_{\mu\nu}[g]+\Lambda g_{\mu\nu}
++\ell_\ast^2\sum_i a_i H_{\mu\nu}^{(i)}+\cdots
+=\frac{8\pi G}{c^4}T_{\mu\nu}^{\rm total},
+\label{eq:einstein}
+\end{equation}
+其中 $T_{\mu\nu}^{\rm total}$ 表示所有低能源的应力能张量，$H_{\mu\nu}^{(i)}$ 表示曲率平方阶的张量（量纲为 $L^{-4}$），$a_i$ 为无量纲系数。因此，所写修正项与 $G_{\mu\nu}$ 一样具有 $L^{-2}$ 的量纲。这是一种受诱导引力思想启发的可能有效场论组织方式\cite{Sakharov1968,Donoghue1994}，并非由前述动理论假设推导而来。本文没有给出微观作用量、正则化方案或匹配计算，因此既未推导这些系数，也未推导基底应力能的耦合。如果某个模型实现了这一极限，还必须说明观测到的牛顿常数和宇宙学项如何确定。在目前层次上，该方程提出的是要求，而非已确立的结论：
+\begin{enumerate}
+\item \textbf{必须复现非线性引力。}场对引力自能的响应必须符合精密检验，包括月球激光测距\cite{Williams2004}。若以所需的普适耦合推导得到，方程~\eqref{eq:einstein} 在主阶上将具备这一性质。
+\item \textbf{高曲率项可能存在。}若其系数为一量级，在曲率半径为 $\ell$ 时，其效应可能按 $(\ell_\ast/\ell)^2$ 缩放。本文既未确立该系数的大小，也未确立 $\ell_\ast$ 与 Yukawa 力程的关系；第~\ref{sec:shortrange} 节的短程约束适用于单独参数化的力律。
+\end{enumerate}
+
+\subsection{由玻色基元构成的费米激发}\label{sec:fermions}
+
+在玻色理论中产生费米激发的一种可能路径，是带有适当拓扑项的孤子量子化\cite{Skyrme1962,Goldstone1981}。这只是启发 A2 的类比，并非 MEQ 框架中的具体构造：本文没有给出基底场内容、拓扑不变量，也没有构造出产生已观测手征谱的 $3+1$ 维构型。费米子及其规范相互作用的构造仍是开放问题（第~\ref{sec:open} 节）。
+
+\subsection{基底中的洛伦兹不变性}
+
+与洛伦兹对称相容的低能色散关系是该提案必须满足的要求，而非基元无质量的必然后果。例如，可作如下参数化：
+\begin{equation}
+E^2=c^2p^2\left[1+\kappa\left(\frac{pc}{E_\ast}\right)^2+\cdots\right],
+\end{equation}
+其中 $\kappa$ 为无量纲参数，省略项取决于具体有效算符。现有实验约束的是某些特定形式的洛伦兹对称破缺：
+\begin{itemize}
+\item 伽马射线暴计时数据约束某些指定的线性能量色散模型\cite{Abdo2009,Vasileiou2013}；
+\item 高能光子未出现真空 Cherenkov 辐射和光子裂变，这对某些高阶结构给出约束\cite{Jacobson2003}。
+\end{itemize}
+若不指定有效算符及其系数，就不能将这些依赖模型的界限转化为对 $E_\ast$ 的普适下限\cite{Myers2005,Bolokhov2007}。本文未进行这项匹配。
+
+\section{观测约束与理论要求}\label{sec:exp}
+
+任何基底模型都必须满足现有观测约束。以下观测用于说明相关要求，但并不构成对参数空间的全面分析：将观测转化为模型参数限制所需的微观耦合尚未给出。因此，下文将经验结果与未来具体实现必须满足的假设加以区分。
+
+\subsection{热力学：细致平衡与能量传递}\label{sec:heat}
+
+针对通量模型的 Maxwell--Poincaré 加热问题仍然成立\cite{LeSage2002,Poincare1908}。碰撞弹性并不能保证物质既不受热也不受阻力：能量传递取决于分布函数、散射核和物质状态。具体模型必须证明细致平衡，并计算净能量与动量传递。因此，所设想的吸收/发射图像只是一项假设，并未解决这一问题。能量不平衡可以用质量变化参数化（第~\ref{sec:p3} 节），但其速率乃至其是否存在，都不能从 A1 推出。
+
+\subsection{轨道稳定性与传播速度}\label{sec:aberration}
+
+在关于信号发射和传播的假设下，GW170817 对引力波与电磁波传播速度之差给出了约束\cite{GW170817}。非协变的中心力延迟通量理论会面临拉普拉斯型光行差问题。在洛伦兹不变场论中，含速度的相互作用项可以抵消主阶光行差\cite{Carlip2000}。因此，轨道稳定性和相对论计时观测约束任何具体实现\cite{Nordtvedt1977}。写出协变的有效方程并不足以证明其微观实现具有所需动力学；本文尚未证明这种匹配。
+
+\subsection{自由落体普适性与应力能耦合}
+
+若该框架要复现 GR，低能极限就必须具有应力能普适耦合。实验约束的是对这一性质的偏离，而不是验证其微观起源：
+\begin{itemize}
+\item MICROSCOPE：钛与铂试验体的 $|\eta|<2.1\times10^{-15}$\cite{Touboul2022}；
+\item 中子干涉实验（Colella--Overhauser--Werner）\cite{Colella1975}和超冷中子的引力量子态实验（qBounce）\cite{Jenke2014}，展示了单个费米子（中子）与地球引力的耦合，其相位/布拉格型响应符合等效原理；
+\item ALPHA 于 2023 年对反氢自由落体的观测与 GR 相容\cite{ALPHA2023}。
+\end{itemize}
+Eöt-Wash 结果约束了特定附加力\cite{Lee2020}。该提案尚未为假设的自旋子和玻色构型推导普适耦合。
+
+\subsection{引力扇区与张量模}\label{sec:gravitonphoton}
+
+类似 GR 的有效引力描述包含张量自由度。但尚未证明所提基底存在相应的集体激发，也未证明其具备所需的无质量性质及耦合。声子的类比仅用于说明。观测约束低能引力扇区，但不能证明基底中存在自旋为 2 的模式：
+\begin{enumerate}
+\item \textbf{相对论引力。}后牛顿检验约束对 GR 的偏离\cite{Will2018}；本文没有从基底推导这些结果。
+\item \textbf{引力波。}GW170817 约束引力信号和电磁信号的相对传播速度，但本身不能确定它们的微观自由度。
+\item \textbf{光子相互作用。}光--光散射测量和真空双折射搜索约束额外光子相互作用\cite{ATLAS2019,PVLAS2016,Mignani2017}。这些实验并未给出本文所用参数 $\zeta$ 的模型无关界限。
+\end{enumerate}
+
+\subsection{宇宙学透明性与光子相互作用}
+
+宇宙学观测约束非标准光子能量损失和谱畸变。但所引用的观测不能直接确定每个哈勃长度上的普适分数损失。在缺少具体相互作用模型的情况下，$\xi$ 只是现象学参数；本文不为它指定数值观测界限。相关观测包括：
+\begin{enumerate}
+\item \textbf{Ia 型超新星光变曲线}显示出随红移变化的时间膨胀\cite{Goldhaber2001}。这限制了对宇宙膨胀的替代解释，但本身并不测量基底散射截面。
+\item \textbf{Tolman 表面亮度检验}探测宇宙膨胀与源演化\cite{Lubin2001}；分析时须同时考虑两者。
+\item \textbf{宇宙微波背景温度演化测量}约束光子浴与其他成分之间的能量交换。
+\item \textbf{宇宙微波背景谱接近黑体谱}\cite{Fixsen1996}，从而限制能量交换所导致的谱畸变。
+\end{enumerate}
+任何提出的光子--基底相互作用都必须与这些观测以及标准宇宙学解释相容，除非另行提供替代说明。要给出 $\xi$ 的数值限制，必须先指定相互作用和传播模型。
+
+\subsection{暗物质：依赖系统演化阶段的引力猜想}\label{sec:dm}
+
+本文考虑一种猜想：\textbf{引力随束缚系统的动力学阶段而变化}。系统形成时（基底净通量向内）出现正异常；系统解体时出现负异常；成熟系统则没有异常。这种符号关系只是定性描述，尚未由动力学模型推导。该现象学目标与包括 MOND 在内的星系运动学修正引力解释有重叠\cite{McGaugh2016}，但尚未导出定量 MEQ 机制或独特信号（第~\ref{sec:p4} 节）。以下三类数据约束此类修正：
+\begin{enumerate}
+\item \textbf{子弹星系团。}弱引力透镜重建出的质量峰与重子气体分离\cite{Clowe2006}，通常被解释为存在相对于气体近似无碰撞的引力成分；若阶段效应仅与重子物质分布相关，就需要说明如何解释该观测。
+\item \textbf{宇宙微波背景声学峰。}第三峰与第二峰的高度比要求在复合时期存在一种不与光子耦合的引力成分\cite{Planck2020}。
+\item \textbf{大爆炸核合成与结构形成。}这些过程约束早期宇宙中的引力密度与重子密度之比。
+\end{enumerate}
+若要替代冷暗物质，必须同时解释透镜、宇宙微波背景和结构形成，而不只是星系旋转曲线。本文尚未证明所提阶段依赖能够满足这些要求，或能将其与重子物理及环境效应区分开来；因此这里只将其作为定性研究目标。
+
+\subsection{短程引力与基底尺度}\label{sec:shortrange}
+
+短程实验根据各自的几何构型，在相应力程范围内约束 Yukawa 修正；Eöt-Wash 实验将分离距离探测至 $52\,\mu$m\cite{Lee2020}。$(\alpha,\lambda)$ 平面中的排除区域取决于所假设的力模型和分析方法，并不能据此直接限制一般的基底尺度。第~\ref{sec:p1} 节将 Yukawa 参数化作为可独立检验的示范基准。本文没有推导 $\lambda$、$\alpha$ 与 $\ell_\ast$ 之间的关系。
+
+\subsection{一致性要求概要}
+
+\begin{table}[htbp]
+\centering\small
+\caption{可能的 MEQ 实现所需满足的部分条件及相关观测。}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.29\textwidth}>{\raggedright\arraybackslash}p{0.38\textwidth}@{}}
+\toprule
+要求 & 相关观测 & 本提案中的状态 \\
+\midrule
+细致平衡与低阻力 & 加热和轨道动力学检验 & 需要碰撞模型 \\
+相对论低能极限 & 太阳系检验；GW170817 & 尚待证明 \\
+普适耦合 & MICROSCOPE 与自能检验 & 必须满足；尚未推导 \\
+张量引力扇区 & 后牛顿与引力波观测 & 微观模式未指定 \\
+光子透明性 & 超新星和宇宙微波背景观测 & 约束依赖具体模型 \\
+Yukawa 参数 $(\alpha,\lambda)$ & 短程引力实验 & 条件性基准（检验 1） \\
+光子参数 $\zeta$ & 双折射和散射实验 & 条件性参数化（检验 2） \\
+阶段依赖引力 & 透镜、宇宙微波背景与结构形成 & 定性猜想（检验 4） \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{条件性检验与实验方案}\label{sec:pred}
+
+\subsection{所提信号的状态}
+
+前文陈述了基底假说，并指出可行实现所需满足的条件；但并未建立封闭理论或确立新的效应。以下四项因此属于条件性检验：两种标准现象学参数化、一种由交换图像启发的假设，以及一种定性的天体物理猜想。下文将分别说明其状态和局限性。
+
+\subsection{检验 1：短程 Yukawa 基准}\label{sec:p1}
+
+作为短程实验的基准，考虑对牛顿引力势作如下 Yukawa 修正：
+\begin{equation}
+V(r)=-\frac{Gm_1m_2}{r}\Bigl[1+\alpha e^{-r/\lambda}\Bigr],
+\label{eq:yukawa}
+\end{equation}
+其中 $\alpha$ 为无量纲参数，$\lambda$ 为力程。该参数化并非从 MEQ 基本假设推导得到：目前尚未建立 $\lambda$、$\ell_\ast$ 与 $\alpha$ 之间的关系。现有短程实验根据各自假定的力模型，约束 $(\alpha,\lambda)$ 平面上的部分区域\cite{Lee2020}。
+
+\textbf{定量估算（详见附录~\ref{app:quant}）。}两块平行钨板、间距为 $d$ 时，Yukawa 压强为
+\begin{equation}
+P_Y(d)=2\pi G\alpha\lambda^2\rho_1\rho_2e^{-d/\lambda},
+\label{eq:pyuk}
+\end{equation}
+对于均匀且厚度足够大的板，该式给出单位面积上的压力。当 $\alpha=1$、$\lambda=39\,\mu$m、$d=52\,\mu$m 时，钨板的理想化压力约为 $6.3\times10^{-11}\,$Pa。此理想压力不等于实验灵敏度，也不是对 Eöt-Wash 分析的复现；真实分析取决于装置几何和系统误差。对于示意性的平行板实验，若有效面积 $A=100\,$cm$^2$、间隙为 $40\,\mu$m，在 $\lambda=20\,\mu$m 时，$10^{-16}$--$10^{-17}\,$N 的力噪声在这一理想化模型中对应 $|\alpha|_{\min}\approx10^{-3}$--$10^{-4}$（附录~\ref{app:quant}）。估算未考虑有限几何、对准误差、表面特性和背景不确定性。在这些距离上 Casimir 力远大于信号；要区分两者，必须进行真实几何和系统误差分析，不能只依赖距离标度不同。\textbf{条件性检验：}随着短程实验灵敏度提高，可搜索这一 Yukawa 基准。若未发现信号，可约束 $(\alpha,\lambda)$；但若没有推导出的匹配关系，不能据此单独限制 $\ell_\ast$。
+
+\begin{figure}[htbp]
+\centering
+\IfFileExists{fig1_yukawa_reach.png}{%
+\includegraphics[width=0.85\textwidth]{fig1_yukawa_reach.png}%
+}{\fbox{\parbox{0.82\textwidth}{当前源文件中未提供此图。}}}
+\caption{Yukawa 参数空间的示意灵敏度。实验排除区或预计灵敏度取决于假定的力律和装置模型；此处不暗示其与基底尺度存在匹配关系。}
+\label{fig:yukawa}
+\end{figure}
+
+\subsection{检验 2：额外的光子--场相互作用}\label{sec:p2}
+
+外场中的光子传播可用参数 $\zeta$ 参数化；本文将 $\zeta$ 定义为弱场 QED 双折射主阶系数的分数变化。它是现象学参数，而非从基底相互作用推导得到。明确地说，
+\begin{equation}
+\Delta n=(1+\zeta)\Delta n_{\rm QED},\qquad
+\psi_{\rm new}=\zeta\,\psi_{\rm QED}.
+\end{equation}
+现有实验室和天体物理观测约束特定的双折射模型，但并未给出对该参数 $\zeta$ 的模型无关界限。
+
+\textbf{示意估算（附录~\ref{app:quant}）。}取弱场系数 $\Delta n_{\rm QED}\simeq4.0\times10^{-24}B^2$，其中 $B$ 以特斯拉为单位；椭圆率为 $\psi=N_{\rm eff}\pi\Delta n L/\lambda_{\rm light}$。一组理想化的 PVLAS 类参数（$B=2.5\,$T、$L=1\,$m、$N_{\rm eff}=2.5\times10^5$）给出 $\psi_{\rm QED}\simeq1.8\times10^{-11}\,$rad。对一组投影的 13\,T、25\,m 参数，若 $N_{\rm eff}=6.4\times10^4$，则信号约为 $3.2\times10^{-9}\,$rad。这些估算假定给定的有效反射次数，未计入背景和仪器系统误差，因此并非性能预报。校准 QED 贡献后，可以搜索与 $\zeta$ 成正比的剩余信号。若无信号，只能约束这一参数化本身，不能据此推断特定微观耦合。
+
+\begin{figure}[htbp]
+\centering
+\IfFileExists{fig2_birefringence.png}{%
+\includegraphics[width=0.95\textwidth]{fig2_birefringence.png}%
+}{\fbox{\parbox{0.92\textwidth}{当前源文件中未提供此图。}}}
+\caption{弱场 QED 双折射和腔内信号标度的示意图。估算未包括装置特定的灵敏度和系统误差。}
+\label{fig:biref}
+\end{figure}
+
+\subsection{检验 3：质量漂移假设}\label{sec:p3}
+
+交换模型可能允许物体与基底之间存在净能量传递。作为现象学假设，设惯性质量的分数漂移率正比于当地重力加速度的大小 $g$：
+\begin{equation}
+\frac{1}{m}\frac{dm}{dt}=\eta\frac{g}{c},
+\label{eq:etadrift}
+\end{equation}
+其中 $\eta$ 为带符号的无量纲参数。此关系并未从能量--动量交换推导出来；微观模型必须说明传递速率、相对论情形下 $g$ 的定义，以及整个系统的守恒定律。在地球表面，$g/c\simeq3.3\times10^{-8}\,\mathrm{s}^{-1}$，因此该假设只提供了可能实验检验的归一化，而不是对 $\eta$ 的界限或预言。
+
+\textbf{条件性检验：}实验室可随时间监测一个定义明确的质量敏感观测量，并与独立校准的引力环境作比较。灵敏度和解释取决于测量方案，以及所假设的漂移是共模还是依赖物质组成。若没有关于质量漂移如何影响轨道、时钟频率和系统能量预算的模型，就不能把双星脉冲星轨道衰减\cite{Kramer2021}或钟比测量直接转化为 $\eta$ 的约束。只有补充这些映射后，零结果才能约束指定的现象学关系。方程~\eqref{eq:etadrift} 并非诱导引力有效场论的一般预言。
+
+\begin{figure}[htbp]
+\centering
+\IfFileExists{fig3_eta_landscape.png}{%
+\includegraphics[width=0.9\textwidth]{fig3_eta_landscape.png}%
+}{\fbox{\parbox{0.87\textwidth}{当前源文件中未提供此图。}}}
+\caption{质量漂移假设的未来灵敏度分析占位图。由于尚未推导可观测量与 $\eta$ 之间的映射，图中不列出现有界限。}
+\label{fig:eta}
+\end{figure}
+
+\subsection{检验 4：与星系阶段相关的信号}\label{sec:p4}
+
+第~\ref{sec:dm} 节的猜想提示，可以在恒星质量和环境固定时，搜索星系运动学残差与独立定义的演化指标（例如比恒星形成率）之间的相关性。目前尚未指定定量关系、符号或幅度；而且这些指标本身并不能定义所谓动力学阶段。有效检验需要预先注册的观测量和理论模型，并考虑重子物理、选择效应、透镜以及竞争模型的预言。跨红移的旋转曲线和弱透镜数据未来或可用于比较，但目前的巡天数据本身尚不能确立这一信号。任何试图取代暗物质的理论还必须解释宇宙微波背景与结构形成。
+
+\section{开放问题与局限性}\label{sec:open}
+
+该提案在以下方面仍不完整，因此尚不能视为具有预言力的理论：
+\begin{enumerate}
+\item \textbf{微观动力学。}本文没有给出作用量、哈密顿量、碰撞核或定义良好的基底状态。因此动力学方程仍是示意性的；守恒、稳定性、细致平衡，以及不会产生不可接受的加热或阻力，均尚未得到证明。
+\item \textbf{物质与规范场。}本文没有构造已观测费米子谱、其手征结构或规范群 $\mathrm{U}(1)\times\mathrm{SU}(2)\times\mathrm{SU}(3)$。其他模型中的拓扑激发实例并不能证明这里所需的构造存在。
+\item \textbf{引力与匹配。}有效场方程是预先假定的低能形式。本文没有从所提基底推导度规、牛顿常数、普适物质耦合、张量模谱或高曲率系数。
+\item \textbf{现象学参数。}Yukawa 参数、$\zeta$ 和 $\eta$ 是分别引入的；没有微观计算将它们彼此联系或与 $\ell_\ast$ 联系起来。因此，数值估算只是灵敏度示意，并非来自某组已指定参数的理论预言。
+\item \textbf{宇宙学与星系现象学。}本文没有定量讨论暴胀、重子生成、宇宙微波背景各向异性谱或结构形成。阶段依赖星系猜想没有明确动力学，也不能作为宇宙学模型。
+\item \textbf{参数约束。}现有观测约束的是特定相互作用和力律。若无匹配计算，不能将这些模型的限制直接等同于对 $\ell_\ast$、$\zeta$、$\eta$ 或光子损失参数的限制。
+\end{enumerate}
+因此，应将本文视为一项研究提案。其核心想法——单一光速基底涌现出物质和引力——目前尚无封闭动力学或已证明的低能极限作为支撑。后续首先需要指定一个自洽的微观模型，并至少推导出一个独特且可定量控制的观测量。之后，才能在该模型框架下重新评估第~\ref{sec:pred} 节的示意检验。
+
+\section{结论}\label{sec:conclusion}
+
+本文将最小能量量子框架作为一项现象学提案提出：物质和引力可能源自单一光速基底。示意性动力学方程和有效引力场方程指出了未来模型需要具备的一些结构，但本文没有从微观动力学推导出它们。我们还列出了四种条件性检验：短程 Yukawa 力、额外真空双折射、可能与交换过程相关的质量漂移，以及定性的星系演化相关性。前两项是标准参数化，并给出了理想化信号估算；后两项尚缺少从观测量到参数的定量映射。现有实验提供了重要约束，但本文并未全面分析理论与数据的一致性，也未确立基底假说。下一项关键工作是明确微观模型、推导有效耦合和守恒律，并结合真实数据及不确定度重新评估这些检验。
+
+\appendix
+
+\section{定量估算}\label{app:quant}
+
+本附录记录两项理想化信号估算。这些计算仅用于示意，既不是实验性能预报，也不是从 MEQ 微观模型推导出的预言。本文不附带数值计算脚本。
+
+\subsection*{A.1\ \ 理想化 Yukawa 压力（检验 1）}
+
+对于平行板几何，钨板（$\rho=1.93\times10^4\,$kg/m$^3$）、$\alpha=1$ 时，方程~\eqref{eq:pyuk} 给出：
+
+\begin{table}[htbp]
+\centering\small
+\caption{$\alpha=1$ 时平行钨板间的 Yukawa 压力（由方程~\eqref{eq:pyuk} 计算）。}
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+$\lambda$ [$\mu$m] & $P_Y(d=\lambda)$ [Pa] & $P_Y(d=2\lambda)$ [Pa] & $P_Y(d=52\,\mu$m) [Pa]\\
+\midrule
+5  & $1.4\times10^{-12}$ & $5.3\times10^{-13}$ & $1.2\times10^{-16}$ \\
+10 & $5.7\times10^{-12}$ & $2.1\times10^{-12}$ & $8.6\times10^{-14}$ \\
+20 & $2.3\times10^{-11}$ & $8.5\times10^{-12}$ & $4.6\times10^{-12}$ \\
+30 & $5.2\times10^{-11}$ & $1.9\times10^{-11}$ & $2.5\times10^{-11}$ \\
+40 & $9.2\times10^{-11}$ & $3.4\times10^{-11}$ & $6.8\times10^{-11}$ \\
+60 & $2.1\times10^{-10}$ & $7.6\times10^{-11}$ & $2.4\times10^{-10}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+当 $\lambda=39\,\mu$m、$d=52\,\mu$m 时，$\alpha=1$ 对应的方程~\eqref{eq:pyuk} 理想平行板压力为 $P_Y\simeq6.3\times10^{-11}\,$Pa。这不是 Eöt-Wash 装置的灵敏度或力限值。对于面积 $A=100\,$cm$^2$、间距 $d=40\,\mu$m、$\lambda=20\,\mu$m 的情形，同一理想化模型给出 $P_Y\simeq8.5\times10^{-12}\alpha\,$Pa。因此，在计入几何和系统效应之前，$10^{-16}$ 和 $10^{-17}\,$N 的力噪声分别对应 $|\alpha|_{\min}\simeq1.2\times10^{-3}$ 和 $1.2\times10^{-4}$。在 $d=10\,\mu$m 时，理想导体板之间的 Casimir 压力约为 $1.3\times10^{-7}\,$Pa；实验分析必须纳入真实材料、有限几何和表面效应。
+
+\subsection*{A.2\ \ 真空双折射的示意信号（检验 2）}
+
+在弱场极限下，取 $\Delta n_{\rm QED}\simeq4.0\times10^{-24}B^2$，其中 $B$ 以特斯拉为单位。若 $\lambda_{\rm light}=1064\,$nm，理想化椭圆率为
+$\psi=N_{\rm eff}\pi\Delta nL/\lambda_{\rm light}$：
+
+\begin{table}[htbp]
+\centering\small
+\caption{QED 信号的腔内椭圆率及 $\zeta$ 灵敏度示意。}
+\begin{tabular}{@{}lrrrrc@{}}
+\toprule
+装置 & $B$ [T] & $L$ [m] & $N_{\rm eff}$ & $\psi_{\rm QED}$ [rad] & $\zeta_{\min}$（$10^{-11}\,$rad）\\
+\midrule
+PVLAS 类 & 2.5 & 1.0 & $2.5\times10^{5}$ & $1.8\times10^{-11}$ & $5.4\times10^{-1}$ \\
+PVLAS 类 & 2.5 & 3.2 & $4.5\times10^{5}$ & $1.1\times10^{-10}$ & $9.4\times10^{-2}$ \\
+OSQAR 类 & 9.0 & 14.3 & $10^{2}$ & $1.4\times10^{-12}$ & $7.3$ \\
+BMV 类   & 13  & 25 & $6.4\times10^{4}$ & $3.2\times10^{-9}$ & $3.1\times10^{-3}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{A.3\ \ 质量漂移假设（检验 3）}
+
+当 $g=9.81\,$m/s$^2$ 时，方程~\eqref{eq:etadrift} 给出 $g/c\simeq3.3\times10^{-8}\,$s$^{-1}$，即每单位 $\eta$ 对应约 $1.0\,$yr$^{-1}$。这仅是该假设规定的归一化。由于本文没有推导方程~\eqref{eq:etadrift} 如何改变相关观测量，因此不列出脉冲星、时钟或实验室对 $\eta$ 的限制。
+
+\begin{thebibliography}{50}\small
+
+\bibitem{Rovelli2015} Rovelli, C. \& Vidotto, F. \emph{Covariant Loop Quantum Gravity: An
+Elementary Introduction to Quantum Gravity and Spinfoam Theory} (Cambridge University Press,
+2015).
+
+\bibitem{Polchinski1998} Polchinski, J. \emph{String Theory} (Cambridge University Press, 1998);
+Maldacena, J. The large-$N$ limit of superconformal field theories and supergravity.
+\emph{Adv. Theor. Math. Phys.} \textbf{2}, 231 (1998).
+
+\bibitem{Reuter1998} Reuter, M. Nonperturbative evolution equation for quantum gravity.
+\emph{Phys. Rev. D} \textbf{57}, 971 (1998); Eichhorn, A. et al. Status reviews in
+\emph{Phys. Rep.} (2022).
+
+\bibitem{Loll2020} Loll, R. Quantum gravity from causal dynamical triangulations: a review.
+\emph{Class. Quantum Grav.} \textbf{37}, 243002 (2020).
+
+\bibitem{Batista2025} Alves Batista, R. et al. White paper and roadmap for quantum gravity
+phenomenology in the multi-messenger era. \emph{Class. Quantum Grav.} \textbf{42}, 032001 (2025).
+
+\bibitem{Touboul2022} Touboul, P. et al. (MICROSCOPE Collaboration). Result of the MICROSCOPE
+weak equivalence principle test. \emph{Class. Quantum Grav.} \textbf{39}, 204009 (2022).
+
+\bibitem{Williams2004} Williams, J. G., Turyshev, S. G. \& Boggs, D. H. Progress in lunar laser
+ranging tests of relativistic gravity. \emph{Phys. Rev. Lett.} \textbf{93}, 261101 (2004);
+Nordtvedt, K. Testing relativity with laser ranging to the Moon. \emph{Phys. Rev.}
+\textbf{170}, 1186 (1968).
+
+\bibitem{GW170817} Abbott, B. P. et al. Gravitational waves and gamma-rays from a binary neutron
+star merger: GW170817 and GRB 170817A. \emph{Astrophys. J. Lett.} \textbf{848}, L13 (2017).
+
+\bibitem{Abdo2009} Abdo, A. A. et al. (Fermi GBM/LAT). A limit on the variation of speed of
+light arising from Fermi observations of GRB~090510. \emph{Science} \textbf{323}, 1688 (2009).
+
+\bibitem{Vasileiou2013} Vasileiou, V. et al. Constraints on Lorentz invariance violation from
+Fermi-Large Area Telescope observations of gamma-ray bursts. \emph{Phys. Rev. D} \textbf{87},
+122001 (2013).
+
+\bibitem{Jacobson2003} Jacobson, T., Liberati, S. \& Mattingly, D. Lorentz invariance and
+ultra-high energy cosmic rays. \emph{Phys. Rev. D} \textbf{67}, 124011 (2003).
+
+\bibitem{Myers2005} Myers, R. C. \& Pospelov, M. Experimental challenges for quantum gravity.
+\emph{Phys. Rev. Lett.} \textbf{90}, 211601 (2003).
+
+\bibitem{Bolokhov2007} Bolokhov, P. A. \& Pospelov, M. Classification of dimension 5 Lorentz
+violating interactions in the standard model. \emph{Class. Quantum Grav.} \textbf{24}, 4991
+(2007).
+
+\bibitem{LeSage2002} Edwards, M. R. (ed.). \emph{Pushing Gravity: New Perspectives on Le Sage's
+Theory of Gravitation} (Apeiron, 2002).
+
+\bibitem{Poincare1908} Poincar\'e, H. La dynamique de l'\'electron. \emph{Rev. G\'en\'erale des
+Sci.} \textbf{19}, 386 (1908); Maxwell, J. C. Atom. \emph{Encyclop\ae dia Britannica} (1875).
+
+\bibitem{Sakharov1968} Sakharov, A. D. Vacuum quantum fluctuations in curved space and the
+theory of gravitation. \emph{Sov. Phys. Dokl.} \textbf{12}, 1040 (1968).
+
+\bibitem{Donoghue1994} Donoghue, J. F. General relativity as an effective field theory: the
+leading quantum corrections. \emph{Phys. Rev. D} \textbf{50}, 3874 (1994).
+
+\bibitem{Jacobson1995} Jacobson, T. Thermodynamics of spacetime: the Einstein equation of state.
+\emph{Phys. Rev. Lett.} \textbf{75}, 1260 (1995).
+
+\bibitem{Verlinde2011} Verlinde, E. On the origin of gravity and the laws of Newton.
+\emph{JHEP} \textbf{1104}, 029 (2011); Padmanabhan, T. Thermodynamical aspects of gravity.
+\emph{Rep. Prog. Phys.} \textbf{73}, 046901 (2010).
+
+\bibitem{Volovik2003} Volovik, G. E. \emph{The Universe in a Helium Droplet} (Oxford University
+Press, 2003).
+
+\bibitem{Barcelo2005} Barcel\'o, C., Liberati, S. \& Visser, M. Analogue gravity.
+\emph{Living Rev. Rel.} \textbf{8}, 12 (2005).
+
+\bibitem{Sinha1976} Sinha, K. P., Sivaram, C. \& Sudarshan, E. C. G. A superfluid vacuum theory of
+matter and gravity. \emph{Found. Phys.} \textbf{6}, 65 (1976).
+
+\bibitem{Zloshchastiev2011} Zloshchastiev, K. G. Spontaneous symmetry breaking in a logarithmic
+nonlinear quantum theory. \emph{Acta Phys. Polon. B} \textbf{42}, 261 (2011).
+
+\bibitem{Skyrme1962} Skyrme, T. H. R. A unified field theory of mesons and baryons.
+\emph{Nucl. Phys.} \textbf{31}, 556 (1962).
+
+\bibitem{Goldstone1981} Goldstone, J. \& Wilczek, F. Fractional quantum numbers on solitons.
+\emph{Phys. Rev. Lett.} \textbf{47}, 986 (1981); Wilczek, F. \& Zee, A. Linking numbers, spin,
+and statistics of solitons. \emph{Phys. Rev. Lett.} \textbf{51}, 2250 (1983).
+
+\bibitem{Wilczek1982} Wilczek, F. Magnetic flux, angular momentum, and statistics.
+\emph{Phys. Rev. Lett.} \textbf{48}, 1144 (1982).
+
+\bibitem{Carlip2000} Carlip, S. Aberration and the speed of gravity. \emph{Phys. Lett. A}
+\textbf{267}, 81 (2000).
+
+\bibitem{Nordtvedt1977} Nordtvedt, K. \& Will, C. M. Testing relativity with pulsar timing.
+\emph{Astrophys. J.} \textbf{212}, 475 (1977).
+
+\bibitem{Colella1975} Colella, R., Overhauser, A. W. \& Werner, S. A. Observation of
+gravitationally induced quantum interference. \emph{Phys. Rev. Lett.} \textbf{34}, 1472 (1975).
+
+\bibitem{Jenke2014} Jenke, T. et al. (qBounce). Measurement of gravitational states of ultracold
+neutrons in the Earth's gravitational field. \emph{Phys. Rev. Lett.} \textbf{112}, 151105 (2014);
+Cronenberg, G. et al. Gravity resonance spectroscopy constrains dark energy and dark matter
+scenarios. \emph{Nature Phys.} \textbf{14}, 1022 (2018).
+
+\bibitem{ALPHA2023} Anderson, E. K. et al. (ALPHA Collaboration). Observation of the effect of
+gravity on the motion of antimatter. \emph{Nature} \textbf{621}, 716 (2023).
+
+\bibitem{Lee2020} Lee, J. G. et al. (E\"ot-Wash Group). New test of the gravitational $1/r^2$ law
+at separations down to 52~$\mu$m. \emph{Phys. Rev. Lett.} \textbf{124}, 101101 (2020);
+Adelberger, E., Gundlach, J., Heckel, B., Hoedl, S. \& Schlamminger, S. Torsion balance
+experiments: a low-energy frontier of fundamental physics. \emph{Prog. Part. Nucl. Phys.}
+\textbf{62}, 102 (2009).
+
+\bibitem{Will2018} Will, C. M. The confrontation between general relativity and experiment.
+\emph{Living Rev. Rel.} \textbf{17}, 4 (2014); \emph{Theory and Experiment in Gravitational
+Physics} (Cambridge University Press, 2018).
+
+\bibitem{ATLAS2019} ATLAS Collaboration. Observation of light-by-light scattering in
+ultraperipheral Pb+Pb collisions with the ATLAS detector. \emph{Phys. Rev. Lett.} \textbf{123},
+051801 (2019).
+
+\bibitem{PVLAS2016} Della Valle, F. et al. (PVLAS). The PVLAS experiment: measuring vacuum
+magnetic birefringence and dichroism with an upgraded magnetically induced optical cavity.
+\emph{Eur. Phys. J. C} \textbf{76}, 24 (2016).
+
+\bibitem{Mignani2017} Mignani, R. P. et al. Evidence for vacuum birefringence from the first
+optical-polarimetry measurement of the isolated neutron star RX~J1856.5$-$3754. \emph{Mon. Not.
+R. Astron. Soc.} \textbf{465}, 492 (2017).
+
+\bibitem{Goldhaber2001} Goldhaber, G. et al. Timescale stretch parameterization of Type~Ia
+supernova $B$-band light curves. \emph{Astrophys. J.} \textbf{558}, 359 (2001).
+
+\bibitem{Lubin2001} Lubin, L. M. \& Sandage, A. The Tolman surface brightness test for the
+reality of the expansion. IV. A measurement of the Tolman signal and the luminosity evolution.
+\emph{Astron. J.} \textbf{122}, 1084 (2001).
+
+\bibitem{Fixsen1996} Fixsen, D. J. et al. (COBE/FIRAS). The cosmic microwave background spectrum
+from the full COBE FIRAS data set. \emph{Astrophys. J.} \textbf{473}, 576 (1996).
+
+\bibitem{McGaugh2016} McGaugh, S. S., Lelli, F. \& Schombert, J. I. Radial acceleration relation
+in rotationally supported galaxies. \emph{Phys. Rev. Lett.} \textbf{117}, 201101 (2016).
+
+\bibitem{Clowe2006} Clowe, D. et al. A direct empirical proof of the existence of dark matter.
+\emph{Astrophys. J. Lett.} \textbf{648}, L109 (2006).
+
+\bibitem{Planck2020} Planck Collaboration. Planck 2018 results. VI. Cosmological parameters.
+\emph{Astron. Astrophys.} \textbf{641}, A6 (2020).
+
+\bibitem{Kramer2021} Kramer, M. et al. Tests of relativistic gravity with radio pulsars.
+\emph{Ann. Rev. Nucl. Part. Sci.} \textbf{73}, 1 (2023).
+
+\end{thebibliography}
+
+\end{document}
