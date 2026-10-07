@@ -15,6 +15,7 @@
 \usepackage{lmodern}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
+\usepackage{array}
 \usepackage{booktabs}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{microtype}
@@ -25,8 +26,7 @@
 \newcommand{\um}{\,\mu\mathrm{m}}
 
 \title{The Minimum Energy Quantum (\meq{}) Framework:\\
-A Single-Quantum Kinetic Substrate for the Unification of\\
-Quantum Field Theory and Gravitation, with Four Falsifiable Predictions}
+A Phenomenological Proposal for an Emergent Light-Speed Substrate}
 
 \author{Roger Wang (Wang Yanxiang)\\[2pt]
 \small Tsinghua x-lab, Shenzhen, China; ALAYA Tech, Beijing, China\\
@@ -38,37 +38,21 @@ Quantum Field Theory and Gravitation, with Four Falsifiable Predictions}
 
 \begin{abstract}
 \noindent
-We propose the Minimum Energy Quantum (\meq{}) framework: a unified account in which all observable
-matter and interactions emerge as collective excitations of a single species of massless quanta
-moving at the speed of light, interacting through elastic exchange. The framework replaces the
-independent postulate sets of quantum field theory (QFT) and general relativity (GR) with one
-microscopic substrate, and contributes four novel elements: (i) an operational derivation of the
-relativity postulates from the light-speed substrate --- the invariance of $c$ is a fixed point of
-any measurement performed ``with $c$ on $c$''; (ii) an induced-gravity self-consistency structure,
-in which the Einstein equation arises as the leading term of a generally covariant mean-field
-condition on the substrate, with higher-curvature corrections suppressed by a substrate length
-$\ell_\ast$; (iii) topological emergence of fermionic quasiparticles from bosonic constituents via
-the Skyrme/Goldstone--Wilczek mechanism; and (iv) emergent --- not exact --- Lorentz symmetry. We
-derive the complete set of structural requirements and quantitative bounds that define the viable
-parameter space: exact elasticity with detailed balance (no heating), Lorentz-invariant induced
-interactions (orbital stability; $c_g = c$ from GW170817), universal coupling through
-$T_{\mu\nu}$ (validated by MICROSCOPE at $10^{-15}$), a spin-2 collective gravitational quantum
-(consistent with post-Newtonian phenomenology and tensor gravitational waves), and cosmological
-transparency ($\xi \lesssim 10^{-3}$ fractional photon energy loss per Hubble length). Within this
-viable region the framework makes four falsifiable predictions, the first three supplied with full
-quantitative estimates and discovery reach: (1) a Yukawa-type deviation from the inverse-square law
-for $\ell_\ast \lesssim 40\um$, with the reach of next-generation torsion-balance and
-micro-cantilever experiments mapped in the $(\alpha,\lambda)$ plane (Sec.~\ref{sec:p1} and
-Appendix~\ref{app:quant}); (2) an anomalous vacuum-birefringence coefficient $\zeta$ below the
-Euler--Heisenberg floor, with the reach of optical-cavity experiments computed for PVLAS-class and
-next-generation strong-field setups; (3) a mass non-stationarity of gravitating configurations ---
-a slow drift of inertial mass scaling as $\dot m/m = \eta\, g/c$ --- for which we derive existing
-bounds from binary-pulsar orbital decay ($\eta \lesssim 5\times10^{-8}$, improving to
-$\lesssim 9\times10^{-10}$ for the double pulsar), mass metrology, and atomic-clock comparisons,
-and we specify a differential experiment with annual modulation tagging capable of probing
-$\eta_{\mathrm{diff}} \sim 10^{-8}$--$10^{-11}$; and (4) phase-dependent galactic gravitation,
-stated as a target for high-redshift surveys. The framework is thereby exposed to decisive
-evidence within the current decade.
+The Minimum Energy Quantum (\meq{}) framework is a phenomenological proposal in which matter and
+gravity are hypothesized to arise from collective behavior of a single species of massless,
+light-speed constituents. We set out its assumptions and a schematic kinetic description, and
+identify the additional dynamical input needed to derive, rather than assume, an effective metric
+and its coupling to matter. In particular, the Einstein equation is presented as a possible
+low-energy matching condition, not as a result established by the model. We discuss four
+conditional experimental signatures: a short-range Yukawa correction to gravity; an additional
+contribution to vacuum birefringence; a possible exchange-associated mass drift; and a
+phase-correlated galactic signal. For the first two, we give illustrative sensitivity estimates
+using idealized geometries and explicitly stated normalizations. The latter two are conjectural:
+the mapping from microscopic exchange to an observable drift, and a quantitative galactic
+prediction, remain unspecified. Existing tests constrain these parameterizations but do not
+validate the proposed substrate. The framework therefore serves as a research program whose
+viability depends on constructing a closed microscopic theory, matching it to established
+low-energy physics, and testing its conditional signatures.
 \end{abstract}
 
 \noindent\textbf{Keywords:} quantum gravity; emergent gravity; induced gravity; kinetic theory;
@@ -80,33 +64,32 @@ equivalence principle; dark matter; experimental tests
 
 \subsection{The problem}
 
-Quantum field theory and general relativity are the two experimentally validated pillars of
-fundamental physics, yet they rest on mutually incompatible foundations: QFT presumes a fixed
-background spacetime and local quantum states defined on it, while GR makes the metric itself
-dynamical. Direct perturbative quantization of the Einstein--Hilbert action fails (the theory is
-power-counting non-renormalizable beyond one loop), while the major structured programs ---
+Quantum field theory (QFT) and general relativity (GR) are central, experimentally successful
+frameworks whose standard formulations do not yet provide a complete quantum description of
+dynamical spacetime. QFT can be formulated on curved backgrounds, while GR makes the metric
+dynamical; reconciling these descriptions remains an open problem. Perturbative quantization of the
+Einstein--Hilbert action is non-renormalizable by power counting, while several structured programs ---
 string/M-theory, loop quantum gravity, asymptotic safety, causal dynamical triangulations,
-holography --- have not produced a uniquely selected, experimentally verified low-energy
-phenomenology \cite{Rovelli2015,Polchinski1998,Reuter1998,Loll2020,Batista2025}.
+holography --- continue to investigate possible resolutions; no approach is uniquely selected by
+experimental evidence \cite{Rovelli2015,Polchinski1998,Reuter1998,Loll2020,Batista2025}.
 
 Three empirical facts sharpen the problem rather than resolving it:
 \begin{enumerate}
-\item \textbf{Gravity couples to all energy.} The MICROSCOPE mission has verified the
-universality of free fall to $|\eta| = (-0.53 \pm 2.05)\times10^{-15}$ \cite{Touboul2022}, and
-lunar laser ranging confirms that gravitational binding energy itself gravitates
-\cite{Williams2004} --- gravity is nonlinear and self-coupling.
-\item \textbf{The graviton, if it exists, is light-speed and effectively spin-2.} GW170817
-constrained $|c_g - c|/c \lesssim 10^{-15}$ \cite{GW170817}, and the orbital dynamics measured by
-LIGO/Virgo agree with the tensor (spin-2) polarization structure of GR, disfavoring large scalar
-or vector gravitational radiation components.
-\item \textbf{Photon propagation is extraordinarily clean.} No energy loss, no blurring, and no
-dispersion attributable to the propagation medium has ever been detected, down to fractional
-sensitivities approaching the Planck scale in high-energy gamma-ray timing
-\cite{Abdo2009,Vasileiou2013,Myers2005}.
+\item \textbf{Free fall is highly universal.} MICROSCOPE constrained the differential
+acceleration of Ti and Pt test bodies to the $10^{-15}$ level
+\cite{Touboul2022}; lunar laser ranging also tests the response of gravitational self-energy
+\cite{Williams2004}. These results constrain departures from universal coupling.
+\item \textbf{Gravitational waves propagate at a speed consistent with $c$.} The joint
+gravitational-wave and gamma-ray observation GW170817 places a strong bound on the difference
+between the propagation speeds \cite{GW170817}. This result alone does not establish the
+microscopic nature or full polarization content of a gravitational degree of freedom.
+\item \textbf{Photon propagation is tightly constrained.} Gamma-ray observations bound specified
+forms of energy-dependent dispersion, with limits depending on the assumed propagation model
+\cite{Abdo2009,Vasileiou2013}. These bounds constrain, but do not exclude every possible,
+interaction with a substrate.
 \end{enumerate}
-These three facts are precisely the boundary conditions that any unified substrate must satisfy.
-The proposal of this paper is built to satisfy them \emph{by construction}, and to convert them
-into quantitative design constraints that locate the theory's novel, testable content.
+These observations motivate constraints on any substrate model; they do not establish that such a
+substrate exists. Here they are used as benchmarks rather than as evidence for the proposal.
 
 \subsection{Historical lineage}
 
@@ -114,16 +97,15 @@ The idea that gravity arises from the collective behavior of a more fundamental 
 and productive history:
 \begin{itemize}
 \item \textbf{Le Sage (1784)} and Fatio de Duillier before him proposed ``push gravity'' from
-an isotropic flux of ultramundane corpuscles, with bodies shielding each other from the flux.
-Maxwell and Poincar\'e showed that \emph{inelastic} interception implies catastrophic heating (for
-Earth, $\geq 10^{59}\,$W), while Laplace-type aberration arguments show that a \emph{non-covariant}
-retarded flux destabilizes orbits \cite{LeSage2002,Poincare1908}. Both objections are statements
-about \emph{which} microscopic dynamics are admissible, and both are evaded by the design choices
-of Sec.~\ref{sec:kinetic}.
-\item \textbf{Sakharov (1968)} showed that the Einstein--Hilbert action can be interpreted as the
-elastic response of the quantum vacuum --- gravity as an \emph{induced} phenomenon of the matter
-vacuum energy \cite{Sakharov1968}. This survives as the effective-field-theory (EFT) view of
-quantum gravity \cite{Donoghue1994}.
+an isotropic flux of corpuscles, with bodies shielding each other from the flux. Analyses of
+inelastic interception raise severe heating concerns, while Laplace-type aberration arguments
+constrain non-covariant retarded-flux models \cite{LeSage2002,Poincare1908}. These objections apply
+to particular flux models. Elastic scattering by itself does not resolve them; a viable model
+must also demonstrate energy balance, small drag, and stable orbital dynamics.
+\item \textbf{Sakharov (1968)} proposed that an Einstein--Hilbert term can be induced by quantum
+fields in a curved-space effective action \cite{Sakharov1968}. This is one motivation for
+effective-field-theory treatments of gravity, not a derivation of the present substrate
+\cite{Donoghue1994}.
 \item \textbf{Jacobson (1995)} derived the Einstein equation as an equation of state of local
 Rindler horizons \cite{Jacobson1995}; \textbf{Verlinde (2010)} recast gravity as entropic
 \cite{Verlinde2011}; \textbf{Volovik} and the analog-gravity program demonstrated that Lorentzian
@@ -132,238 +114,207 @@ condensed substrates (superfluid $^3$He) \cite{Volovik2003,Barcelo2005}.
 \item \textbf{Superfluid vacuum theories} (Sinha, Sivaram, Sudarshan; Zloshchastiev) treat
 particles as quasiparticles of a superfluid vacuum \cite{Sinha1976,Zloshchastiev2011}.
 \end{itemize}
-The \meq{} framework proposed here belongs to this lineage and is distinguished by four
-commitments:
+The \meq{} proposal belongs to this broad lineage. Its defining assumptions are:
 \begin{itemize}
-\item \textbf{(P1) Single species.} Only one type of fundamental quantum exists, the ``minimum
-energy quantum'' (\meq{}), all moving at $c$ and interacting only through elastic collisions.
-\item \textbf{(P2) Matter as bound states.} Bosons are coherent groups of co-moving \meq{}s
-(vector-field excitations); fermions are topological/rotational bound configurations (spinor
-fields) of the substrate.
-\item \textbf{(P3) Gravity as collective field.} The gravitational field is not produced
-\emph{by} matter but arises \emph{with} matter, as the self-consistent collective field of the
-substrate surrounding every bound configuration.
-\item \textbf{(P4) Emergent spacetime.} Time and space, as measured quantities, inherit their
-properties (minimum scales, Lorentz symmetry, curvature near gravity) from the light-speed
-substrate.
+\item \textbf{(P1) Single species.} The proposal postulates one type of fundamental quantum, called
+the ``minimum energy quantum'' (\meq{}), moving at $c$ and interacting through elastic
+collisions. No minimum energy value or spectrum is defined here; the name labels the hypothesis.
+\item \textbf{(P2) Matter as bound states.} Observed particles are hypothesized to be collective
+or topological configurations of the substrate; no complete particle spectrum is derived here.
+\item \textbf{(P3) Gravity as collective field.} The gravitational field is hypothesized to be a
+collective substrate degree of freedom sourced by matter and substrate stress-energy.
+\item \textbf{(P4) Emergent spacetime.} Operational spacetime and its effective symmetries are
+conjectured to arise from the substrate; their derivation is not given here.
 \end{itemize}
 
 \subsection{What this paper does}
 
-The purpose of this paper is threefold:
+The purpose of this paper is limited to three tasks:
 \begin{enumerate}
-\item \textbf{Formulate} the framework (P1)--(P4) as a mathematically explicit relativistic
-kinetic mean-field theory with an induced effective action (Sec.~\ref{sec:kinetic}), making
-every assumption explicit.
-\item \textbf{Establish consistency} with the complete set of modern experimental constraints,
-deriving quantitative bounds on the \meq{}--matter and \meq{}--photon interaction cross-sections
-that define the viable parameter space (Sec.~\ref{sec:exp}).
-\item \textbf{Extract the falsifiable content}: a parameterized family of deviations from
-GR/Newtonian gravity and QED, with target experiments identified (Sec.~\ref{sec:pred}), and full
-quantitative estimates for the first three predictions (Appendix~\ref{app:quant}).
+\item \textbf{State} the postulates and a schematic kinetic description, distinguishing them from
+the microscopic dynamics that remain to be supplied (Sec.~\ref{sec:kinetic}).
+\item \textbf{Summarize} relevant observational constraints and explain which assumptions they
+would test, without treating compatibility with selected bounds as a global data fit
+(Sec.~\ref{sec:exp}).
+\item \textbf{Specify} four conditional phenomenological signatures and illustrative estimates for
+two of them (Sec.~\ref{sec:pred} and Appendix~\ref{app:quant}).
 \end{enumerate}
 
-This is a hypothesis paper with an explicit research program; we do not claim a completed
-derivation of the Standard Model from the substrate. We claim that the \meq{} framework is
-\emph{consistent with all existing data} in a well-defined region of parameter space, and that it
-makes \emph{distinctive, testable} predictions in that region --- predictions which no
-established framework (GR, QED, or their EFT extensions) currently makes in the same form.
+This is a hypothesis paper, not a completed theory. The equations below do not define a closed
+microscopic model, and the proposed parameters are not derived from it. Consequently, the
+parameterizations are useful for organizing possible tests but do not demonstrate consistency with
+all existing data or establish predictions distinct from every extension of GR or QED.
 
 \section{Conceptual Foundations}\label{sec:concept}
 
 \subsection{Operational spacetime}
 
-A central innovation of the framework is its operationalist account of spacetime: all
-measurements of space and time are performed by apparatus ultimately composed of light-speed
-quanta. If every clock is ultimately a light-clock and every ruler is delimited by signals
-propagating at $c$, then:
+A motivating interpretation is operational: measurements of space and time are performed with
+physical apparatus, and light signals provide an important means of calibration. This observation
+does not by itself derive spacetime symmetries. In particular:
 \begin{enumerate}
-\item \textbf{Light-speed invariance is not an additional postulate} but a fixed point of the
-measurement process itself --- ``measuring $c$ with $c$'' returns $c$ in every frame. This
-gives a concrete substrate realization of the observation underlying Mansouri--Sexl-type test
-theories \cite{Mansouri1977} and doubly-special-relativity programs \cite{Amelino2002}: the
-invariance of the limiting speed is structurally guaranteed when the substrate that defines
-measurement is the same substrate that defines light.
-\item \textbf{Minimum measurable scales} arise because the substrate quanta are not points. If
-the \meq{} has an effective size $\ell_\ast$, then no apparatus built from \meq{}s can resolve
-intervals smaller than $\mathcal{O}(\ell_\ast)$. The discrete spectra of geometric operators in
-loop quantum gravity \cite{Rovelli2015} can be reinterpreted in this language: the minimum
-area/volume is set by the substrate granularity.
-\item \textbf{Curvature near gravity} is an operational statement: in a region where light
-trajectories are bent, all measurements performed with light are distorted exactly as if the
-metric were curved. The statement ``gravity \emph{is} spacetime curvature'' is derived in this
-framework as ``curvature is how a light-speed substrate's collective field manifests in
-light-based measurements.'' We regard (following \cite{Volovik2003}) the metric as an
-\emph{effective} object; this is also the EFT position \cite{Donoghue1994}.
+\item \textbf{Light-speed invariance} is an empirical property that the proposal must reproduce.
+Using light-based apparatus does not alone establish invariance in every inertial frame; this
+requires suitable substrate dynamics and an experimentally acceptable low-energy limit.
+\item \textbf{A minimum measurable scale} would follow only if the substrate has a finite
+correlation or resolution length $\ell_\ast$ and if operational observables inherit it. Neither
+property is derived here. This possibility is conceptually distinct from the quantization of
+geometric operators in loop quantum gravity \cite{Rovelli2015}.
+\item \textbf{An effective metric} can be used to describe propagation in a collective background.
+Relating that metric to the metric of GR requires dynamical equations and matter couplings not
+specified by the operational interpretation alone \cite{Volovik2003,Donoghue1994}.
 \end{enumerate}
 
 \subsection{Postulates}
 
-We state the \meq{} postulates in a form suitable for quantitative analysis:
+We state the \meq{} postulates as assumptions to be made quantitative by a future model:
 \begin{itemize}
 \item \textbf{A1 (Substrate).} There exists a universal quantum field $\psi$ whose quanta are
 massless ($E = |\mathbf{p}|c$), with an interaction that reduces to elastic scattering at leading
 order.
-\item \textbf{A2 (Emergence of matter).} The observed particle spectrum (spin-0, $\tfrac12$, 1)
-arises as collective excitations --- bound and/or topological configurations --- of $\psi$.
-\emph{The task of Sec.~\ref{sec:fermions} is to state the known mechanisms by which bosonic
-constituents yield fermionic excitations.}
-\item \textbf{A3 (Emergence of gravity).} The gravitational field $g_{\mu\nu}$ is the collective
-mean field of the substrate; it is determined by a self-consistency condition on the total
-stress-energy, of which the Einstein equation is the leading-order term.
+\item \textbf{A2 (Emergence of matter).} The observed particle spectrum, including spin-0,
+$\tfrac12$, and 1 excitations, is hypothesized to arise as collective, bound, or topological
+configurations of $\psi$.
+\emph{The mechanisms discussed in Sec.~\ref{sec:fermions} are analogies, not a construction of
+the observed fermions from this substrate.}
+\item \textbf{A3 (Emergence of gravity).} The gravitational field $g_{\mu\nu}$ is hypothesized to
+be a collective mean field of the substrate. A viable realization must specify its self-consistency
+condition and show that its low-energy limit includes the Einstein equation.
 \item \textbf{A4 (EFT matching).} At energies well below the substrate scale
-$E_\ast \sim \hbar c/\ell_\ast$, the framework must reduce to (and is constrained by) the
-Standard Model plus GR, with corrections suppressed by powers of $E/E_\ast$.
+$E_\ast \sim \hbar c/\ell_\ast$, the framework is required to reproduce the tested predictions of
+the Standard Model and GR, with any corrections specified by a matched effective theory.
 \end{itemize}
-A2 is the least developed link in the chain. We note two established mechanisms showing it is
-not \emph{a priori} impossible: (i) in the Skyrme model, fermions emerge as topological solitons
-of bosonic fields, with the fermionic statistics derived from the
-Wess--Zumino--Goldstone term \cite{Skyrme1962,Goldstone1981}; (ii) in 2+1 dimensions,
-flux--charge composites (anyons) interpolate between bosonic and fermionic statistics
-\cite{Wilczek1982}. A1--A4 therefore demand a 3+1-dimensional analogue of such mechanisms; we
-return to this in Sec.~\ref{sec:open}.
+A2 is the least developed link in the chain. Soliton quantization in particular models and
+flux--charge composites in 2+1 dimensions illustrate ways in which nontrivial statistics can arise
+\cite{Skyrme1962,Goldstone1981,Wilczek1982}; neither supplies the required 3+1-dimensional
+construction of the observed chiral gauge spectrum from the proposed single substrate. This
+remains an open problem (Sec.~\ref{sec:open}).
 
 \subsection{Classification of observables}
 
-We introduce a trichotomy of observables: \textbf{(i) directly detected quanta} (detected by
-absorption in apparatus --- e.g., photons); \textbf{(ii) indirectly inferred quanta} (inferred
-from scattering of substrate quanta off configurations --- ordinary fermionic matter);
-\textbf{(iii) inferred fields} (gravitational, and historically, electromagnetic fields; and
-hypothetical entities such as dark matter). The epistemic status differs across the three
-classes, and any theory that promotes a class-(iii) entity to class-(i)/(ii) status --- or
-eliminates it --- gains in economy. This is the sense in which the \meq{} program is, at its
-core, a program in \textbf{theory economy}: replace the standard model's particle zoo plus the
-graviton plus (possibly) dark matter with one substrate quantum.
+For discussion, one may distinguish \textbf{(i) directly detected quanta} (for example, photons),
+\textbf{(ii) particles inferred through their interactions} (including ordinary matter), and
+\textbf{(iii) fields inferred from their effects} (including gravitational fields). Replacing
+established entities with a substrate would require reproducing their empirical roles; economy of
+postulates alone is not evidence in favor of that replacement.
 
 \section{The Kinetic Framework}\label{sec:kinetic}
 
-\subsection{Distribution function and conservation}
+\subsection{Kinetic ansatz and conservation}
 
-Let $f(x,\mathbf{n})$ denote the phase-space density of substrate quanta at spacetime point $x$
-propagating in direction $\mathbf{n}$ (all quanta are on-shell at speed $c$). Its stress-energy
-tensor is
+As a schematic starting point, let $f(x,p)$ be a distribution on the future-directed massless
+momentum shell, with $p^\mu p_\mu=0$ and $p^0>0$. Choose coordinates $x^0=ct$ and metric signature
+$(-,+,+,+)$. A conventional kinetic definition of the substrate stress-energy tensor is
 \begin{equation}
-T^{\mu\nu}(x) \;=\; \sigma\, c \int d\Omega\, n^\mu n^\nu\, f(x,\mathbf{n}),
+T_{\rm sub}^{\mu\nu}(x) \;=\; \int dP\,p^\mu p^\nu f(x,p),
 \end{equation}
-(with $\sigma$ an energy scale factor), and the dynamics is governed, at the microscopic level, by
-a Boltzmann-type equation
+where $dP$ is the invariant measure on that shell and the normalization of $f$ is chosen so that
+$T_{\rm sub}^{\mu\nu}$ has units of energy density. The corresponding Boltzmann equation is written
+schematically as
 \begin{equation}
-n^\mu \partial_\mu f \;=\; C[f,F],
+p^\mu \partial_\mu f \;=\; C[f,\mathcal{F}],
 \end{equation}
-where $C$ is the elastic collision functional and $F$ denotes the self-consistent mean field.
-Elasticity implies exact local conservation of $T^{\mu\nu}$ after integration over directions ---
-the substrate exchanges momentum and energy with matter configurations but never dissipates into
-heat. This is the first structural difference from Le Sage-type theories: \textbf{the heating
-catastrophe is absent because collisions are exactly elastic}, and the drag catastrophe is absent
-in the limit where the anisotropic part of $f$ is of order the gravitational field itself.
-We quantify both statements in Secs.~\ref{sec:heat}--\ref{sec:aberration}.
+where $C$ and the collective field $\mathcal{F}$ have not been specified. For an isolated
+substrate collision term, local conservation would require
+$\int dP\,p^\nu C[f,\mathcal{F}]=0$; when matter and substrate exchange energy-momentum, only the
+combined stress-energy tensor can be conserved. Elasticity of individual collisions does not by
+itself imply absence of heating or drag in an interacting medium. Those properties require a
+microscopic collision kernel, a stable equilibrium, and a calculation of energy and momentum
+transfer. These equations define an ansatz rather than a closed kinetic theory; the Le Sage
+objections are constraints to be addressed, not problems resolved by the present postulates.
 
 \subsection{Mean-field self-consistency: induced gravity}\label{sec:induced}
 
-The central equation of the framework is a self-consistency condition between the substrate
-stress-energy and the effective metric that the substrate's collective field defines for all
-propagation (including its own quanta). At leading order in derivatives, the most general
-generally covariant self-consistency condition is
+To describe a possible low-energy limit, introduce an effective metric $g_{\mu\nu}$ and write a
+generally covariant field equation in derivative-expansion form,
 \begin{equation}
-G_{\mu\nu}[g] + \Lambda g_{\mu\nu} + \mathcal{O}(\ell_\ast^{2} R^{2})
-\;=\; \frac{8\pi G}{c^{4}}\, \Big( \langle T_{\mu\nu}\rangle_{\rm substrate} + T_{\mu\nu}^{\rm matter} \Big),
+G_{\mu\nu}[g] + \Lambda g_{\mu\nu}
++ \ell_\ast^2 \sum_i a_i H_{\mu\nu}^{(i)} + \cdots
+\;=\; \frac{8\pi G}{c^{4}}\,T_{\mu\nu}^{\rm total},
 \label{eq:einstein}
 \end{equation}
-which is the Einstein equation with higher-curvature corrections --- Sakharov's induced gravity
-in modern EFT form \cite{Sakharov1968,Donoghue1994}. Within the \meq{} framework this equation
-acquires a specific interpretation: \textbf{the left-hand side is the collective, continuum
-response of the substrate; the right-hand side contains both ordinary matter (quasiparticle
-excitations) and the substrate's own anisotropic background}. Two consequences follow:
+where $T_{\mu\nu}^{\rm total}$ denotes the stress-energy of all low-energy sources, the
+$H_{\mu\nu}^{(i)}$ denote tensors of curvature-squared order (dimension $L^{-4}$), and $a_i$ are
+dimensionless coefficients. The displayed correction terms therefore have the same dimension
+($L^{-2}$) as $G_{\mu\nu}$. This is a possible effective-field-theory organization, motivated by
+induced-gravity ideas \cite{Sakharov1968,Donoghue1994}; it does not follow from the kinetic ansatz
+above. No microscopic action, regulator, or matching calculation is specified here, so neither
+the coefficients nor the coupling to substrate stress-energy are derived. If a model realizes
+this limit, it must also explain how the observed Newton constant and cosmological term are fixed.
+At this level, the equation identifies requirements rather than established consequences:
 \begin{enumerate}
-\item \textbf{Nonlinearity is automatic.} Because the substrate's stress-energy includes its own
-gravitational binding configuration, ``gravity gravitates'' --- the requirement imposed by lunar
-laser ranging and the Nordtvedt effect \cite{Williams2004}. A purely linear superposition field
-cannot satisfy this; the self-consistency structure is essential to the framework.
-\item \textbf{Corrections are predicted to exist} at the scale $(\ell_\ast/\ell)^{2}$ for
-curvature radius $\ell$. If $\ell_\ast$ is of order the Planck length, these are unobservably
-small; if $\ell_\ast$ is larger (e.g., of order $10^{-5}$--$10^{-3}\,$m, near the reach of
-short-range gravity tests), they are testable. The framework thus has a natural scanning
-parameter, and the experimental situation (Sec.~\ref{sec:shortrange}) bounds it from below ---
-this is the origin of Prediction 1 (Sec.~\ref{sec:p1}).
+\item \textbf{Nonlinear gravity must be recovered.} The response to gravitational self-energy
+must match precision tests, including lunar laser ranging \cite{Williams2004}. Equation~\eqref{eq:einstein} would have this property at leading order if derived with the required
+universal coupling.
+\item \textbf{Higher-curvature terms may be present.} If their coefficients are of order unity,
+their effects can scale as $(\ell_\ast/\ell)^2$ for curvature radius $\ell$. Neither this
+coefficient size nor a relation between $\ell_\ast$ and a Yukawa range is established here; the
+short-range constraints in Sec.~\ref{sec:shortrange} apply to a separately parameterized force
+law.
 \end{enumerate}
 
 \subsection{Fermionic excitations from bosonic constituents}\label{sec:fermions}
 
-In our framework, a fermion is realized as a \textbf{topological soliton or flux--charge
-composite} of the substrate, with fermionic statistics arising from a configuration-space
-(braid) phase --- the Skyrme/Goldstone--Wilczek mechanism \cite{Skyrme1962,Goldstone1981}, which
-\emph{derives} an odd fermion number and half-integer spin from bosonic fields with a topological
-term. The \meq{} ``spinor field'' of the postulate A2 should therefore be read as such a
-configuration; its quantitative construction --- a 3+1-dimensional realization covering the
-observed chiral spectrum --- is the central open problem of the program (Sec.~\ref{sec:open}),
-and no claim of completion is made here.
+One possible route to fermionic excitations in a bosonic theory is soliton quantization with
+appropriate topological terms \cite{Skyrme1962,Goldstone1981}. This is an analogy motivating A2,
+not a construction within the \meq{} framework: no substrate field content, topological invariant,
+or 3+1-dimensional configuration yielding the observed chiral spectrum is provided. The
+construction of fermions and their gauge interactions remains an open problem (Sec.~\ref{sec:open}).
 
 \subsection{Lorentz invariance from the substrate}
 
-A massless substrate at equilibrium supports emergent Lorentz invariance for its quasiparticles,
-in the sense of Volovik's classification \cite{Volovik2003}: the low-energy quasiparticle
-dispersion $E^{2} = c^{2}p^{2}\bigl(1 + \mathcal{O}(p^{2}/E_\ast^{2})\bigr)$ with emergent (not
-fundamental) Lorentz symmetry. The substrate picture \emph{predicts tiny violations} of exact
-Lorentz invariance at energies of order $E_\ast$, which is testable:
+A low-energy dispersion relation compatible with Lorentz symmetry is a requirement on the
+proposal, not a consequence of masslessness of its constituents. As an illustrative
+parameterization,
+\begin{equation}
+E^2 = c^2p^2\left[1+\kappa\left(\frac{pc}{E_\ast}\right)^2+\cdots\right],
+\end{equation}
+where $\kappa$ is dimensionless and the omitted terms depend on the effective operators. Existing
+tests constrain particular forms of Lorentz violation:
 \begin{itemize}
-\item Gamma-ray burst photon timing constrains linear-in-$(E/E_\ast)$ dispersion to
-$E_\ast \gtrsim E_{\rm Planck}$ for most operator structures \cite{Abdo2009,Vasileiou2013};
+\item Gamma-ray burst timing constrains some specified linear-in-energy dispersion models
+\cite{Abdo2009,Vasileiou2013};
 \item the absence of vacuum Cherenkov radiation and photon splitting for high-energy photons
 bounds certain higher-order structures \cite{Jacobson2003}.
 \end{itemize}
-These are among the sharpest existing constraints on the \meq{} substrate scale, and they force
-the substrate to be \emph{extraordinarily} --- but not exactly --- transparent and
-dispersion-free. Parameterizing the \meq{}--photon forward-scattering amplitude in the standard
-dimension-5/6 EFT notation \cite{Myers2005,Bolokhov2007} gives the explicit bounds quoted in
-Sec.~\ref{sec:p2}.
+The bounds are operator-dependent and cannot be converted into a universal lower limit on
+$E_\ast$ without specifying the effective operators and their coefficients
+\cite{Myers2005,Bolokhov2007}. This paper does not perform that matching.
 
-\section{Experimental Consistency and Parameter-Space Constraints}\label{sec:exp}
+\section{Observational Constraints and Requirements}\label{sec:exp}
 
-Any unified substrate theory must satisfy a complete set of modern experimental constraints. In
-this section we derive the structural requirements and quantitative bounds that define the viable
-parameter space of the \meq{} framework. Each subsection states a requirement of the model, the
-data that fixes it, and its quantitative consequence. Far from weakening the framework, these
-constraints are what give it empirical content: they locate precisely where its novel predictions
-can be sought (Sec.~\ref{sec:pred}).
+Any substrate model must satisfy existing constraints. The observations summarized below
+illustrate relevant requirements, but they do not constitute a comprehensive parameter-space
+analysis: the microscopic couplings needed to translate them into bounds have not been specified.
+The discussion therefore distinguishes empirical results from assumptions imposed on a future
+realization.
 
-\subsection{Thermodynamics: exact elasticity and detailed balance}\label{sec:heat}
+\subsection{Thermodynamics: detailed balance and energy transfer}\label{sec:heat}
 
-The Maxwell--Poincar\'e heating objection \cite{LeSage2002,Poincare1908} --- that bodies should be
-incinerated by a flux medium --- is evaded \emph{by construction} in the \meq{} framework:
-collisions are exactly elastic (A1), so no energy is dissipated as heat. The dynamical mechanism
-of gravity is then absorption \emph{into} bound configurations balanced by emission in detailed
-balance: \meq{}s absorbed into a bound configuration \emph{become part of its mass}. The energy
-bookkeeping is not ``heat'' but ``mass'': equilibrium requires that the rate of \meq{} absorption
-equal the rate of mass-energy growth of the configuration, and that configurations in
-equilibrium absorb and emit in detailed balance. \textbf{The framework therefore predicts that
-isolated bodies are, at some level, not exactly stationary in mass} --- a falsifiable (and
-currently untested at the required precision) feature, developed quantitatively as Prediction 3
-(Sec.~\ref{sec:p3}). A strict equilibrium limit exists in which absorption and emission balance
-exactly, and gravity is the residual anisotropic stress of this balanced exchange --- the kinetic
-counterpart of the quantum-vacuum ``mock gravity'' of Spitzer and Gamow, whose cosmological
-irrelevance was shown by Field \cite{Field1971}; in the \meq{} framework this exchange is the
-\emph{local, always-present} mechanism.
+The Maxwell--Poincar\'e heating objection to flux models remains relevant
+\cite{LeSage2002,Poincare1908}. Elasticity of collisions does not guarantee that matter neither
+heats nor experiences drag: energy transfer depends on the distribution, scattering kernel, and
+state of the matter. A model would need to demonstrate detailed balance and calculate the net
+energy and momentum transfer. The proposed absorption/emission picture is therefore a hypothesis,
+not a resolution of the objection. An imbalance could be parameterized as a mass change
+(Sec.~\ref{sec:p3}), but the rate and even its existence do not follow from A1.
 
-\subsection{Orbital stability: the induced interaction must be Lorentz invariant}\label{sec:aberration}
+\subsection{Orbital stability and propagation speed}\label{sec:aberration}
 
-Gravity propagates at $c$ through the substrate, consistent with GW170817
-($|c_g - c|/c \lesssim 10^{-15}$ \cite{GW170817}). Any \emph{retarded flux} theory of a central
-force would suffer Laplace-type aberration --- the force pointing to the retarded position of the
-source, destabilizing orbits. Carlip \cite{Carlip2000} showed that in \emph{Lorentz-invariant}
-field theories the aberration is cancelled to $\mathcal{O}(v/c)$ by velocity-dependent interaction
-terms --- this is exactly how GR itself evades the Laplace argument. The \meq{} framework
-therefore \textbf{requires} the Lorentz-invariant induced-interaction form of
-Sec.~\ref{sec:induced}: the self-consistency equation must hold with the covariant structure
-written there, and this is what guarantees orbital stability at the level verified by solar-system
-dynamics and pulsar timing \cite{Nordtvedt1977}. This is a genuine, sharp constraint on the
-microscopic model, and the induced-gravity form satisfies it by construction.
+GW170817 constrains the difference between gravitational-wave and electromagnetic propagation
+speeds, under assumptions about emission and propagation \cite{GW170817}. A non-covariant
+retarded-flux theory of a central force would face Laplace-type aberration. In Lorentz-invariant
+field theories, velocity-dependent interaction terms can cancel the leading aberration
+\cite{Carlip2000}. Orbital stability and relativistic timing therefore constrain any concrete
+realization \cite{Nordtvedt1977}. Writing a covariant effective equation is not sufficient to
+establish that its microscopic realization has the required dynamics; the present proposal has not
+demonstrated this matching.
 
-\subsection{Universality of free fall: coupling through \texorpdfstring{$T_{\mu\nu}$}{T-mu-nu}}
+\subsection{Universality of free fall and stress-energy coupling}
 
-The framework couples gravity universally to total stress-energy $T_{\mu\nu}$ through the
-self-consistency condition \eqref{eq:einstein} --- for ordinary matter (quasiparticle
-excitations) and substrate background alike. The precision experiments then read as a
-\emph{validation of this design choice at unprecedented level}:
+Universal coupling to stress-energy is a required low-energy property if the framework is to
+reproduce GR. Experiments constrain violations of this property, but do not validate its
+microscopic origin:
 \begin{itemize}
 \item MICROSCOPE: $|\eta| < 2.1\times10^{-15}$ for Ti vs.\ Pt-Rh test masses \cite{Touboul2022};
 \item neutron interferometry (Colella--Overhauser--Werner \cite{Colella1975}) and the
@@ -372,148 +323,125 @@ coupling of individual fermions (the neutron) to Earth's gravity, with a phase/B
 matching the equivalence principle;
 \item the free fall of antihydrogen (ALPHA, 2023 \cite{ALPHA2023}) falls within GR.
 \end{itemize}
-The universal $T_{\mu\nu}$ coupling is also what protects the framework from the
-composition-dependent ``fifth-force'' parameter region excluded by the E\"ot-Wash program
-\cite{Lee2020}. Within our construction, spinor matter gravitates exactly as bosonic matter does.
+The E\"ot-Wash results constrain specific additional forces \cite{Lee2020}. The proposal does not
+yet derive universal coupling for its hypothetical spinor and bosonic configurations.
 
-\subsection{The gravitational quantum: a collective spin-2 mode}\label{sec:gravitonphoton}
+\subsection{The gravitational sector and tensor modes}\label{sec:gravitonphoton}
 
-In the \meq{} framework, the quantum of the gravitational field is a \textbf{collective mode of
-the substrate} --- a quasiparticle with spin-2 quantum numbers, whose existence the framework
-shares with all induced-gravity constructions. The spin-2 mode is not the photon; it is the
-coherent density/current oscillation of the substrate, exactly as phonons are not photons
-although both can scatter. This assignment is required by, and consistent with, four independent
-lines of evidence:
+An effective description of gravity resembling GR contains tensor degrees of freedom. Whether
+the proposed substrate supports a corresponding collective excitation, and whether it has the
+required masslessness and couplings, has not been shown. The analogy to phonons is illustrative
+only. Observations constrain the low-energy gravitational sector but do not establish a
+spin-2 substrate mode:
 \begin{enumerate}
-\item \textbf{Spin.} The gravitational interaction couples to $T_{\mu\nu}$ with a spin-2
-structure. The post-Newtonian phenomenology (perihelion precession, light deflection, Shapiro
-delay, and the observed gravitational-wave orbital dynamics) is reproduced by a spin-2 field
-\cite{Will2018} --- the substrate's collective spectrum must therefore contain this mode, and
-the induced-gravity construction delivers it.
-\item \textbf{Charge structure.} Electromagnetism has two signs of charge with both attraction
-and repulsion and no universal coupling to neutral energy; gravity is universally attractive and
-couples to all of $T_{\mu\nu}$. Distinct mediators are required --- precisely the collective
-spin-0/½/1 (matter quasiparticles) and spin-2 (gravitational) modes of one substrate.
-\item \textbf{Gravitational waves.} LIGO/Virgo events with electromagnetic counterparts
-(GW170817) show that gravitational radiation propagates at $c$ and carries the tensor
-polarization pattern of GR, while the associated photons arrive by a distinct channel with
-different interactions --- consistent with distinct collective modes of the same substrate.
-\item \textbf{Photon--photon scattering.} QED's Euler--Heisenberg nonlinearities --- confirmed
-in Delbr\"uck scattering, light-by-light scattering at ATLAS, and the vacuum-birefringence
-polarization signals of magnetars observed by IXPE \cite{ATLAS2019,PVLAS2016,Mignani2017} ---
-saturate the observed photon--field interaction budget, bounding any additional substrate
-contribution; this is the empirical basis of the $\zeta$-parameterization of Prediction 2
-(Sec.~\ref{sec:p2}).
+\item \textbf{Relativistic gravity.} Post-Newtonian tests constrain deviations from GR
+\cite{Will2018}; this proposal does not derive those results from its substrate.
+\item \textbf{Gravitational waves.} GW170817 constrains the relative propagation speeds of
+gravitational and electromagnetic signals, but does not by itself identify their microscopic
+degrees of freedom.
+\item \textbf{Photon interactions.} Measurements of light-by-light scattering and searches for
+vacuum birefringence constrain additional photon interactions
+\cite{ATLAS2019,PVLAS2016,Mignani2017}. They do not define a model-independent bound on the
+parameter $\zeta$ used below.
 \end{enumerate}
 
-\subsection{Cosmological transparency: bound on the inelastic \texorpdfstring{\meq{}--photon}{MEQ-photon} cross-section}
+\subsection{Cosmological transparency and photon interactions}
 
-Photons propagate through the substrate without measurable energy loss, blurring, or anomalous
-dispersion on cosmological baselines. Quantitatively, four independent observations constrain the
-inelastic \meq{}--photon channel, written as a fractional energy loss $\xi$ per Hubble length:
+Cosmological observations constrain nonstandard photon energy loss and spectral distortion.
+However, the cited observations do not directly determine a universal fractional loss per Hubble
+length. In the absence of a specified interaction model, $\xi$ is only a phenomenological
+parameter; it is not assigned a numerical observational bound here. Relevant observations include:
 \begin{enumerate}
-\item \textbf{Time dilation of Type Ia supernova light curves} scales as $(1+z)$; the
-spectral-aging rate follows $(1+z)^{0.97\pm0.10}$ \cite{Goldhaber2001} --- an energy-loss
-mechanism produces no time dilation, so its contribution to the redshift budget is negligible.
-\item \textbf{The Tolman surface-brightness test} gives $(1+z)^{-4}$ dimming, the signature of
-expansion; HST cluster galaxy data verify it at high significance \cite{Lubin2001,Riess1998}.
-\item \textbf{The CMB temperature scales as $T(z) = T_0(1+z)$} out to $z \approx 3$, as measured
-from molecular excitation in high-$z$ absorbers --- the adiabatic cooling of an expanding photon
-gas.
-\item \textbf{The CMB spectrum is Planckian to $\sim$50 ppm (COBE/FIRAS)} \cite{Fixsen1996}, with
-$|y| < 1.5\times10^{-5}$ on Compton distortions; any direction-randomizing or
-energy-exchanging photon--medium interaction is excluded.
+\item \textbf{Type Ia supernova light curves} exhibit redshift-dependent time dilation
+\cite{Goldhaber2001}. This constrains alternatives to expansion but does not by itself measure a
+substrate scattering cross-section.
+\item \textbf{The Tolman surface-brightness test} probes cosmological expansion and source
+evolution \cite{Lubin2001}; interpreting it requires accounting for both.
+\item \textbf{Measurements of CMB temperature evolution} constrain energy exchange with the
+photon bath.
+\item \textbf{The CMB spectrum is close to a blackbody} \cite{Fixsen1996}, limiting spectral
+distortions from energy exchange.
 \end{enumerate}
-The framework's conclusion is a design bound: \textbf{the \meq{}--photon inelastic cross-section
-must be small enough that $\xi \lesssim 10^{-3}$ per Hubble length}, with the cosmological
-redshift retaining its standard expansion interpretation and the accelerated expansion treated,
-as in GR, as a property of the vacuum term $\Lambda$. This bound, together with the
-elastic-channel constraints of Sec.~\ref{sec:gravitonphoton}, defines the transparency region of
-parameter space in which Prediction 2 is formulated.
+Any proposed photon--substrate interaction must be consistent with these observations and with
+the standard cosmological interpretation unless an alternative account is supplied. A numerical
+limit on $\xi$ requires a specified interaction and propagation model.
 
 \subsection{Dark matter: the phase-dependent gravity conjecture}\label{sec:dm}
 
-A distinctive conjecture of the \meq{} framework is \textbf{phase-dependent gravitation}:
+A conjecture considered here is \textbf{phase-dependent gravitation}:
 gravitational strength tied to the \emph{dynamical phase} of the bound system --- systems in
 formation (net inward substrate flux) exhibit a positive anomaly; systems in dissolution exhibit a
-negative anomaly; mature systems exhibit none. The phenomenological target overlaps with MOND
-\cite{McGaugh2016} (flat rotation curves without non-baryonic mass), but the mechanism is
-different, and so are its signatures (Sec.~\ref{sec:p4}). Three classes of data constrain any
-such modification:
+negative anomaly; mature systems exhibit none. This sign assignment is qualitative and has not
+been derived from a dynamical model. The phenomenological target overlaps with modified-gravity
+interpretations of galaxy kinematics, including MOND \cite{McGaugh2016}, but no quantitative
+\meq{} mechanism or distinct signature has been derived (Sec.~\ref{sec:p4}). Three classes of
+data constrain any such modification:
 \begin{enumerate}
 \item \textbf{The Bullet Cluster} --- weak-lensing mass peaks displaced from the baryonic gas
-\cite{Clowe2006} require the gravitating component to be collisionless relative to the gas,
-which a pure field-phase effect tied to the baryon distribution struggles to produce.
+\cite{Clowe2006} are commonly interpreted as evidence for a gravitating component that is
+collisionless relative to the gas; a phase effect tied only to the baryonic distribution would
+need to explain this observation.
 \item \textbf{CMB acoustic peaks} --- the third-to-second peak ratio requires a
 non-photon-coupled gravitating component at recombination \cite{Planck2020}.
 \item \textbf{Big-bang nucleosynthesis and structure formation} --- constrain the
 gravitating-to-baryonic density ratio at early times.
 \end{enumerate}
-A viable \meq{}-based alternative must therefore reproduce the \emph{full} gravitational
-phenomenology of cold dark matter (lensing + CMB + structure formation), not merely rotation
-curves. We do not claim this; we state it as the explicit burden of Prediction 4
-(Sec.~\ref{sec:p4}) and note that the \meq{} signature --- gravitational strength depending on
-the formation/dissolution phase of the bound system, strongest at early times --- is \emph{in
-principle} distinguishable both from $\Lambda$CDM and from MOND by high-redshift rotation-curve
-surveys with weak-lensing cross-checks, a program now becoming feasible with JWST.
+A viable alternative to cold dark matter would have to address lensing, the cosmic microwave
+background, and structure formation, not only galaxy rotation curves. The proposed phase
+dependence has not been shown to meet these requirements or to be distinguishable from baryonic
+and environmental effects; it is retained below only as a qualitative research target.
 
 \subsection{Short-range gravity and the substrate scale}\label{sec:shortrange}
 
-Newton's inverse-square law is verified down to separations of $52\,\mu$m by the E\"ot-Wash
-torsion-balance program \cite{Lee2020}, excluding gravity-strength Yukawa corrections with range
-$\lambda > 39\,\mu$m (95\% C.L.). This bounds any substrate-scale modification of the
-gravitational force to $\lambda \lesssim 40\,\mu$m or $|\alpha| \ll 1$ at larger $\lambda$.
-Conversely, \textbf{the region below $52\,\mu$m is precisely where a substrate-scale effect must
-live if it is to be observable at all.} The \meq{} framework therefore predicts, in its most
-testable form, a deviation from the inverse-square law at separations of order the substrate
-length $\ell_\ast < 40\,\mu$m, with strength set by the induced-gravity matching. This is a
-genuine, falsifiable, laboratory-accessible prediction (Sec.~\ref{sec:p1}).
+Short-range tests constrain Yukawa corrections over the ranges probed by their specific
+geometries; the E\"ot-Wash experiment tested separations down to $52\,\mu$m
+\cite{Lee2020}. Exclusions in the $(\alpha,\lambda)$ plane are conditional on the force model and
+analysis, and do not by themselves bound a generic substrate length. In Sec.~\ref{sec:p1} we use
+a Yukawa parameterization as an illustrative, independently testable benchmark. No relation
+between $\lambda$, $\alpha$, and $\ell_\ast$ has been derived for this proposal.
 
 \subsection{Summary of consistency requirements}
 
 \begin{table}[htbp]
 \centering\small
-\caption{Structural requirements of the \meq{} framework, their experimental basis, and status.}
-\begin{tabular}{@{}lll@{}}
+\caption{Selected requirements on a possible \meq{} realization and relevant observational tests.}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.29\textwidth}>{\raggedright\arraybackslash}p{0.38\textwidth}@{}}
 \toprule
-Framework requirement & Experimental basis & Status \\
+Requirement & Relevant observations & Status in this proposal \\
 \midrule
-Exact elasticity, detailed balance & No heating/drag anomalies & Satisfied by construction \\
-Lorentz-invariant induced interaction & Orbital stability; GW170817 $c_g = c$ & Satisfied by construction \\
-Universal coupling via $T_{\mu\nu}$ & MICROSCOPE $10^{-15}$; COW; qBounce; ALPHA & Validated at $10^{-15}$ \\
-Spin-2 collective graviton & PPN phenomenology; tensor GW polarizations & Consistent \\
-Cosmological transparency & SN~Ia dilation; Tolman; CMB $T(z)$, FIRAS & $\xi \lesssim 10^{-3}$/Hubble length \\
-Substrate length $\ell_\ast$ & E\"ot-Wash: $\lambda<39\,\mu$m excluded at $|\alpha|\!\sim\!1$ & $\ell_\ast < 40\um$ $\to$ \textbf{testable} (P1) \\
-Photon--field elastic channel & IXPE; PVLAS; light-by-light & $|\zeta| \lesssim 10^{-3}$--$10^{-1}$ $\to$ \textbf{testable} (P2) \\
-Phase-dependent gravitation & Bullet Cluster; CMB peaks; BBN & Constrained $\to$ \textbf{testable} (P4) \\
+Detailed balance and low drag & Heating and orbital-dynamics tests & Requires a collision model \\
+Relativistic low-energy limit & Solar-system tests; GW170817 & Must be demonstrated \\
+Universal coupling & MICROSCOPE and self-energy tests & Required; not derived \\
+Tensor gravitational sector & Post-Newtonian and GW observations & Microscopic mode unspecified \\
+Photon transparency & Supernova and CMB observations & Model-dependent constraints \\
+Yukawa parameters $(\alpha,\lambda)$ & Short-range gravity tests & Conditional benchmark (P1) \\
+Photon coefficient $\zeta$ & Birefringence and scattering tests & Conditional parameterization (P2) \\
+Phase-dependent gravitation & Lensing, CMB, and structure formation & Qualitative conjecture (P4) \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\section{Novel Predictions and the Experimental Program}\label{sec:pred}
+\section{Conditional Tests and the Experimental Program}\label{sec:pred}
 
-\subsection{Summary of the framework's novel content}
+\subsection{Status of the proposed signatures}
 
-The \meq{} framework, in the form established by Secs.~\ref{sec:concept}--\ref{sec:exp},
-contributes: (i) the operational derivation of emergent, light-speed-defined spacetime
-(Sec.~\ref{sec:concept}); (ii) the induced-gravity self-consistency structure with
-higher-curvature corrections suppressed by the substrate scale (Sec.~\ref{sec:induced});
-(iii) the topological program for fermionic quasiparticles (Sec.~\ref{sec:fermions});
-(iv) emergent Lorentz symmetry with tiny violations near $E_\ast$ (Sec.~\ref{sec:kinetic});
-and (v) a kinetic (exchange-based) interpretation of the gravitational interaction that yields a
-\emph{mass non-stationarity} prediction no field theory of gravity makes
-(Sec.~\ref{sec:p3} below). We now state the four falsifiable predictions.
+The preceding sections state a substrate hypothesis and identify requirements for a viable
+realization; they do not derive a closed theory or establish new effects. The following four
+items are therefore conditional tests: two standard phenomenological parameterizations, one
+exchange-motivated ansatz, and one qualitative astrophysical conjecture. Their status and
+limitations are stated separately below.
 
-\subsection{Prediction 1: sub-40-\texorpdfstring{$\mu$}{mu}m deviation from the inverse-square law}\label{sec:p1}
+\subsection{Test 1: a short-range Yukawa benchmark}\label{sec:p1}
 
-The framework predicts a Yukawa-type deviation from Newtonian gravity,
+As a benchmark for short-range tests, consider a Yukawa correction to Newtonian gravity,
 \begin{equation}
 V(r) \;=\; -\frac{G m_1 m_2}{r}\Bigl[\,1 + \alpha\, e^{-r/\lambda}\Bigr],
 \label{eq:yukawa}
 \end{equation}
-with $\lambda \approx \ell_\ast$ (the substrate length) and $\alpha$ of order unity (naturalness
-of the induced-gravity matching). Current data \cite{Lee2020} exclude this for $\lambda >
-39\,\mu$m at $|\alpha| \sim 1$.
+where $\alpha$ is dimensionless and $\lambda$ is a range parameter. This parameterization is not
+derived from the \meq{} postulates: no relation between $\lambda$, $\ell_\ast$, and $\alpha$ has
+been established. Existing short-range measurements constrain parts of the $(\alpha,\lambda)$
+plane for their assumed force models \cite{Lee2020}.
 
 \textbf{Quantitative estimate (details in Appendix~\ref{app:quant}).} For two parallel tungsten
 plates at gap $d$ the Yukawa pressure is
@@ -521,193 +449,166 @@ plates at gap $d$ the Yukawa pressure is
 P_Y(d) \;=\; 2\pi\, G\, \alpha\, \lambda^{2} \rho_1 \rho_2\, e^{-d/\lambda},
 \label{eq:pyuk}
 \end{equation}
-numerically $P_Y \approx 3.3\times10^{-11}\,$Pa at the current exclusion boundary
-($\alpha=1$, $\lambda=39\,\mu$m, $d=52\,\mu$m) --- i.e., the E\"ot-Wash 2020 experiment
-operates at a pressure sensitivity of order $10^{-11}\,$Pa. A next-generation experiment
-($A = 100\,$cm$^2$ of W--W working area, gap $40\,\mu$m) with force noise
-$F_{\min} = 10^{-16}$--$10^{-17}\,$N reaches
-$|\alpha|_{\min} \approx 10^{-3}$--$10^{-4}$ at $\lambda = 20\,\mu$m
-(Fig.~\ref{fig:yukawa}). The Casimir background at these gaps
-($\sim\!10^{-7}\,$Pa at $10\,\mu$m) exceeds the signal but has a distinct $d^{-4}$ versus
-$e^{-d/\lambda}$ separation dependence, allowing discrimination. \textbf{Prediction:} a
-deviation appears as experiments push below $\sim40\,\mu$m toward $\ell_\ast$; otherwise the
-bound pushes $\ell_\ast$ toward its Planck-scale limit and the substrate becomes empirically
-indistinguishable from quantum-gravity EFT.
+For uniform, thick plates this expression gives the pressure per unit area. At
+$\alpha=1$, $\lambda=39\,\mu$m, and $d=52\,\mu$m it is approximately
+$6.3\times10^{-11}\,$Pa for tungsten. This idealized pressure is not an experimental sensitivity
+or a reproduction of the E\"ot-Wash analysis, which depends on the apparatus geometry and
+systematics. For illustrative parallel plates with $A=100\,$cm$^2$ and gap $40\,\mu$m, a force
+noise of $10^{-16}$--$10^{-17}\,$N would correspond to
+$|\alpha|_{\min}\approx 10^{-3}$--$10^{-4}$ at $\lambda=20\,\mu$m in this idealized model
+(Appendix~\ref{app:quant}). This estimate omits finite geometry, alignment, surface, and
+background uncertainties. Casimir forces are much larger at these separations; distinguishing
+them requires a realistic geometry and systematic-error analysis, not separation scaling alone.
+\textbf{Conditional test:} the Yukawa benchmark can be searched for as experiments improve at
+short range. A null result constrains $(\alpha,\lambda)$, but does not by itself bound
+$\ell_\ast$ without a derived matching relation.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.85\textwidth]{fig1_yukawa_reach.png}
-\caption{Discovery reach in the $(\alpha,\lambda)$ plane for Prediction 1. Red: approximate
-E\"ot-Wash 2020 exclusion; green/blue dotted: reach of a next-generation experiment with
-$A=100\,$cm$^2$ W--W at gap $40\,\mu$m for two force-noise floors. The region between the curves
-is the viable discovery window of the \meq{} substrate length $\ell_\ast$.}
+\IfFileExists{fig1_yukawa_reach.png}{%
+\includegraphics[width=0.85\textwidth]{fig1_yukawa_reach.png}%
+}{\fbox{\parbox{0.82\textwidth}{Figure unavailable in this source distribution.}}}
+\caption{Illustrative Yukawa parameter-space reach. Any experimental exclusion or projected
+sensitivity depends on the assumed force law and apparatus model; no substrate-scale matching is
+implied.}
 \label{fig:yukawa}
 \end{figure}
 
-\subsection{Prediction 2: anomalous photon--field interactions below the QED floor}\label{sec:p2}
+\subsection{Test 2: an additional photon--field interaction}\label{sec:p2}
 
-The substrate necessarily contributes a forward-scattering amplitude to photon propagation
-through strong ambient fields, of the same parametric form as the Euler--Heisenberg correction
-but with a different coefficient $\zeta$ (and no electron-mass Compton-scale suppression if
-$\ell_\ast \neq \lambda_C$). Writing the anomalous vacuum-birefringence coefficient as
-$\zeta \times (\text{QED value})$, current bounds from PVLAS, OSQAR, gamma-ray astrophysics, and
-magnetar polarimetry \cite{PVLAS2016,Mignani2017} require $|\zeta| \lesssim 10^{-3}$--$10^{-1}$
-depending on channel.
+An additional contribution to photon propagation in an external field can be parameterized by
+$\zeta$, defined here as the fractional change in the leading weak-field QED birefringence
+coefficient. This is a phenomenological parameter, not a derived substrate interaction. Explicitly, we define
+\begin{equation}
+\Delta n=(1+\zeta)\Delta n_{\rm QED},\qquad
+\psi_{\rm new}=\zeta\,\psi_{\rm QED}.
+\end{equation}
+Existing laboratory and astrophysical observations constrain particular birefringence models;
+they do not provide a model-independent bound on this $\zeta$.
 
-\textbf{Quantitative estimate (Appendix~\ref{app:quant}).} The Euler--Heisenberg Cotton--Mouton
-asymmetry is $\Delta n_{\rm QED} = \frac{\alpha_{\rm em}}{45\pi}(B/B_c)^2$ with $B_c =
-4.414\times10^{9}\,$T; at $B = 10\,$T this is $\Delta n = 2.6\times10^{-22}$. The accumulated
-ellipticity in a cavity is $\psi = N_{\rm eff}\,\pi\,\Delta n\, L/\lambda_{\rm light}$: for the
-operated PVLAS parameters ($B=2.5\,$T, $L=1\,$m, $N_{\rm eff}=2.5\times10^5$) the QED signal is
-$\psi_{\rm QED} \approx 1.2\times10^{-11}\,$rad --- the QED floor is \emph{itself} at the edge
-of detectability, which is why any $\zeta \gtrsim 0.1$ would already have been seen. A
-next-generation setup (13--14\,T magnet, 10--25\,m cavity, $N_{\rm eff} \sim 10^{5}$) delivers
-$\psi_{\rm QED} \sim 10^{-9}\,$rad, so a readout noise of $10^{-11}\,$rad probes
-$\zeta \sim 10^{-2}$--$10^{-3}$ (Fig.~\ref{fig:biref}). \textbf{Prediction:} a residual,
-polarization-dependent phase shift in multi-pass optical cavity experiments embedded in strong
-($\geq$10\,T) laboratory fields, at the level set by $\zeta \neq 0$, observable \emph{below} the
-QED floor once the QED signal itself is calibrated. A null result down to
-$\zeta \sim 10^{-6}$ would force the \meq{}--photon coupling into the same structure as ordinary
-QED loops.
+\textbf{Illustrative estimate (Appendix~\ref{app:quant}).} Using the weak-field coefficient
+$\Delta n_{\rm QED}\simeq 4.0\times10^{-24}B^2$ with $B$ in tesla and
+$\psi=N_{\rm eff}\pi\Delta n L/\lambda_{\rm light}$, an idealized PVLAS-like configuration
+($B=2.5\,$T, $L=1\,$m, $N_{\rm eff}=2.5\times10^5$) gives
+$\psi_{\rm QED}\simeq1.8\times10^{-11}\,$rad. A projected 13\,T, 25\,m configuration with
+$N_{\rm eff}=6.4\times10^4$ gives about $3.2\times10^{-9}\,$rad. These estimates assume the
+quoted effective pass counts and neglect backgrounds and instrumental systematics; they are not
+performance forecasts. A residual proportional to $\zeta$ could be sought after independently
+calibrating the QED contribution. A null result would constrain this parameterization only and
+would not imply a specific microscopic coupling.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.95\textwidth]{fig2_birefringence.png}
-\caption{Prediction 2. Left: Euler--Heisenberg birefringence $\Delta n_{\rm QED}(B)$. Right:
-cavity ellipticity versus effective passes for PVLAS-class and next-generation (BMV-class)
-setups; the horizontal line marks a representative readout noise floor.}
+\IfFileExists{fig2_birefringence.png}{%
+\includegraphics[width=0.95\textwidth]{fig2_birefringence.png}%
+}{\fbox{\parbox{0.92\textwidth}{Figure unavailable in this source distribution.}}}
+\caption{Illustrative weak-field QED birefringence and cavity signal scaling. The estimates do
+not include apparatus-specific sensitivity or systematic uncertainties.}
 \label{fig:biref}
 \end{figure}
 
-\subsection{Prediction 3: mass non-stationarity of gravitating configurations}\label{sec:p3}
+\subsection{Test 3: a mass-drift ansatz}\label{sec:p3}
 
-Because the gravitational field is maintained by the balance of substrate absorption and
-emission, an exact prediction of the kinetic picture is that the \emph{inertial mass of a body
-is stationary only in the detailed-balance limit}. The momentum flux that sustains the weight
-$F = mg$ of a body carries energy flux $\sim\! Fc = mgc$; if a fraction $\eta$ of that anisotropic
-power is stored as mass rather than re-emitted, then
+An exchange model might permit a net energy transfer between a body and the substrate. As a
+phenomenological ansatz, suppose the fractional inertial-mass drift is proportional to the local
+gravitational acceleration magnitude $g$:
 \begin{equation}
 \frac{1}{m}\frac{dm}{dt} \;=\; \eta\,\frac{g}{c},
 \label{eq:etadrift}
 \end{equation}
-where $g$ is the local gravitational field. At Earth's surface $g/c = 3.3\times10^{-8}\,$s$^{-1}$
-($\approx 1.03\,$yr$^{-1}$ for $\eta=1$), so existing data already constrain $\eta$ severely.
+where $\eta$ is dimensionless and signed. This relation is not derived from energy-momentum
+exchange; a microscopic model would have to specify the transfer rate, the meaning of $g$ in a
+relativistic setting, and the conservation law for the combined system. At Earth's surface,
+$g/c\simeq3.3\times10^{-8}\,\mathrm{s}^{-1}$, so the ansatz provides a normalization for a
+potential test, not a bound or prediction for $\eta$.
 
-\textbf{Quantitative estimate (Appendix~\ref{app:quant}).} Converting existing limits on
-anomalous mass drift:
-\begin{itemize}
-\item \emph{Binary pulsars.} The Hulse--Taylor pulsar's orbital decay agrees with GR to
-$|\dot P_b^{\rm anom}| \lesssim 1.6\times10^{-14}\,$s/s; with $\dot P/P = -2\,\dot m/m$ for
-adiabatic isotropic mass change, and local field $g = 50\,$m/s$^2$ at the pulsar,
-$\eta \lesssim 4.8\times10^{-8}$. The double pulsar J0737$-$3039 (conservatively
-$10^{-3}\times$GR in $\dot P_b$, $g = 214\,$m/s$^2$ \cite{Kramer2021}) gives
-$\eta \lesssim 9\times10^{-10}$.
-\item \emph{Laboratory mass metrology.} Composition-\emph{differential} stability of standards
-($\sim\!5\times10^{-9}$/yr) implies $\eta_{\rm comp} \lesssim 5\times10^{-9}$.
-\item \emph{Atomic-clock comparisons.} Limits on variation of mass ratios
-($\lesssim 10^{-16}$/yr) imply $\eta_{\rm comp} \lesssim 10^{-16}$ \emph{if} the drift is
-carried by composition-relevant masses --- the strongest existing constraint on the
-composition-dependent part.
-\end{itemize}
-\textbf{The untested content is a common-mode, composition-\emph{independent}} drift, which
-pulsar timing bounds only at $\eta \lesssim 10^{-9}$, plus any \emph{potential-scaled} drift
-$\dot m/m = \Gamma\,\Phi/c^{2}$, whose distinctive signature is an \emph{annual modulation} of
-mass ratios (amplitude $\Gamma \times 1.7\times10^{-3}\,$s) synchronized with the Earth's orbital
-phase ($\Delta\Phi/c^2 = \pm3.3\times10^{-10}$ from eccentricity $e = 0.0167$).
-\textbf{Falsifiable form:} a differential mass-drift experiment monitoring two
-composition-distinct test masses (e.g., Si vs.\ Pt-Ir) with $10^{-12}$--$10^{-13}$/yr ratio
-precision and Fourier analysis at $f = 1/$yr against the known phase of Earth's orbit probes
-$\eta_{\rm diff} \sim 10^{-8}$--$10^{-11}$ --- unexplored territory. A positive signal would be a
-unique signature impossible for any field theory of gravity (in which inertial mass is exactly
-conserved), while a null result bounds the exchange asymmetry. We emphasize that this prediction
-follows only from the \emph{kinetic} (exchange-based) reading of the framework; the pure
-induced-gravity EFT reading predicts no such drift. The experiment therefore \emph{discriminates
-between the two readings} --- a logically clean and, to our knowledge, novel test.
+\textbf{Conditional test:} a laboratory search could monitor a well-defined mass-sensitive
+observable over time and compare it with an independently calibrated gravitational environment.
+The experimental sensitivity and interpretation would depend on the measurement protocol and on
+whether the proposed drift is common-mode or composition-dependent. Binary-pulsar orbital decay \cite{Kramer2021} and clock-ratio measurements cannot be translated
+into a bound on $\eta$ without a model of how the drift changes the orbit, clock frequencies, and
+system energy budget. A null result would
+constrain the specified phenomenological relation only after these mappings are supplied.
+Equation~\eqref{eq:etadrift} is not a generic prediction of induced-gravity effective field theory.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\textwidth]{fig3_eta_landscape.png}
-\caption{Prediction 3: landscape of bounds on the exchange-imbalance parameter $\eta$ from
-binary pulsars, laboratory mass metrology, and clock comparisons, together with the projected
-reach of the proposed differential mass-comparison experiment.}
+\IfFileExists{fig3_eta_landscape.png}{%
+\includegraphics[width=0.9\textwidth]{fig3_eta_landscape.png}%
+}{\fbox{\parbox{0.87\textwidth}{Figure unavailable in this source distribution.}}}
+\caption{Placeholder for a future sensitivity analysis of the mass-drift ansatz. Existing bounds
+are not shown because no observable-to-$\eta$ mapping has been derived.}
 \label{fig:eta}
 \end{figure}
 
-\subsection{Prediction 4: phase-dependent galactic gravitation}\label{sec:p4}
+\subsection{Test 4: a phase-correlated galactic signal}\label{sec:p4}
 
-If the phase-dependent mechanism of Sec.~\ref{sec:dm} has any macroscopic content, the most
-distinctive signature is gravitational strength tied to the \emph{dynamical phase} of the bound
-system: systems in formation (net inward flux) exhibit a positive anomaly; systems in dissolution
-exhibit a negative anomaly; mature systems exhibit none. This differs from MOND (which depends
-on acceleration scale $a_0$) and from $\Lambda$CDM (which depends on halo history).
-\textbf{Test:} joint rotation-curve + weak-lensing surveys of galaxies as a function of redshift
-and star-formation phase; the \meq{} signature is a correlation of the ``missing mass'' ratio
-with specific star-formation rate and environment at fixed stellar mass, which $\Lambda$CDM
-predicts to be weak and MOND predicts to be absent. Existing data (e.g., the SPARC sample at low
-$z$) already provide partial leverage \cite{McGaugh2016}; JWST and ELT high-$z$ surveys complete
-it. We stress that this prediction survives only in the region of parameter space where the
-Bullet Cluster and CMB constraints are satisfied by the baryonic-plus-phase content --- a
-demanding requirement that may yet exclude the mechanism entirely; we state it as a
-\emph{target for falsification}, not as an achieved result.
+The conjecture in Sec.~\ref{sec:dm} suggests looking for a correlation between galaxy kinematic
+residuals and independently defined evolutionary indicators, such as specific star-formation
+rate, at fixed stellar mass and environment. No quantitative relation, sign, or amplitude is
+specified, and these indicators are not themselves a definition of a dynamical phase. A useful
+test would require a preregistered observable and a model that accounts for baryonic physics,
+selection effects, lensing, and the predictions of competing models. Rotation-curve and
+weak-lensing data across redshift could eventually provide relevant comparisons, but present
+surveys do not, by themselves, establish this signature. Any account replacing dark matter must
+also address the CMB and structure formation.
 
 \section{Open Problems and Limitations}\label{sec:open}
 
-We state frankly the points at which the program is incomplete:
+The proposal is incomplete in several respects that prevent it from being treated as a predictive
+theory:
 \begin{enumerate}
-\item \textbf{Fermion construction.} No 3+1-dimensional topological construction of the full
-Standard Model fermion spectrum from a single bosonic substrate exists. The Skyrme mechanism
-demonstrates existence-in-principle for single fermions, not a spectrum with the observed
-chiral/gauge structure.
-\item \textbf{Gauge group emergence.} The emergence of the full Standard Model gauge group
-$\mathrm{U}(1)\times\mathrm{SU}(2)\times\mathrm{SU}(3)$ from the substrate is not constructed
-here; the established route in substrate models is via the topology of the vacuum manifold
-(Volovik's program \cite{Volovik2003}), and this is the path the program must follow.
-\item \textbf{Quantitative cosmology.} Inflation, baryogenesis, and the CMB power spectrum have
-no treatment in the framework. If phase-dependent gravity (Sec.~\ref{sec:p4}) fails the
-Bullet-Cluster class of tests, the framework must revert to $\Lambda$CDM cosmology wholesale and
-its distinctive content shrinks to laboratory-scale effects
-(Secs.~\ref{sec:p1}--\ref{sec:p3}).
-\item \textbf{Parameter naturalness.} The framework survives only with
-$\ell_\ast < 40\,\mu$m, $\xi$ (inelastic photon loss) $< 10^{-3}$ per Hubble length, and
-$\zeta < 10^{-3}$. Each of these can be viewed as a fine-tuning (a criticism) or as a set of
-falsifiable restrictions (our reading), but honesty requires both readings to be stated.
+\item \textbf{Microscopic dynamics.} No action, Hamiltonian, collision kernel, or well-defined
+substrate state is supplied. Consequently the kinetic equation is schematic, and conservation,
+stability, detailed balance, and the absence of unacceptable heating or drag have not been shown.
+\item \textbf{Matter and gauge fields.} No construction of the observed fermion spectrum, its
+chiral structure, or the gauge group $\mathrm{U}(1)\times\mathrm{SU}(2)\times\mathrm{SU}(3)$ is
+given. Examples of topological excitations in other models do not establish this construction.
+\item \textbf{Gravity and matching.} The effective field equation is an assumed low-energy form.
+There is no derivation of the metric, Newton's constant, universal matter coupling, tensor-mode
+spectrum, or higher-curvature coefficients from the proposed substrate.
+\item \textbf{Phenomenological parameters.} The Yukawa parameters, $\zeta$, and $\eta$ are
+introduced independently; no microscopic calculation relates them to one another or to
+$\ell_\ast$. The numerical estimates are therefore sensitivity illustrations, not predictions
+from a specified parameter set.
+\item \textbf{Cosmology and galactic phenomenology.} There is no quantitative treatment of
+inflation, baryogenesis, the CMB anisotropy spectrum, or structure formation. The phase-dependent
+galactic conjecture has no specified dynamics and is not an alternative cosmological model.
+\item \textbf{Parameter constraints.} Existing observations constrain specific interactions and
+force laws. The bounds quoted for those models cannot be identified with limits on
+$\ell_\ast$, $\zeta$, $\eta$, or a photon-loss parameter without a matching calculation.
 \end{enumerate}
 
-The honest overall assessment is: \textbf{the \meq{} framework, in the form presented here, is a
-member of the family of induced/emergent gravity models, distinguished by its kinetic (exchange)
-interpretation and its consequent non-stationarity prediction (Sec.~\ref{sec:p3}); it is not
-presently a competitor to established theory in explanatory scope, and its value is contingent
-on the outcomes of the tests in Sec.~\ref{sec:pred}.}
+Accordingly, the present manuscript should be read as a research proposal. Its central idea---a
+single light-speed substrate with emergent matter and gravity---is not yet supported by a closed
+dynamics or a demonstrated low-energy limit. Progress requires first specifying a consistent
+microscopic model and deriving at least one distinctive, quantitatively controlled observable.
+The illustrative tests in Sec.~\ref{sec:pred} can then be assessed against that model.
 
 \section{Conclusion}\label{sec:conclusion}
 
-We have formulated the Minimum Energy Quantum framework --- a single-species, light-speed,
-elastic-exchange substrate from which the operational content of spacetime, the relativity
-postulates, an induced gravitational interaction with spin-2 collective quanta, and a program
-for the emergence of matter are to be derived --- and established its consistency with the
-complete corpus of modern experimental constraints, from MICROSCOPE and E\"ot-Wash through
-GW170817 to the CMB. The framework's four novel elements --- the operational derivation of
-relativistic spacetime, the induced-gravity self-consistency structure, the topological program
-for fermions, and emergent Lorentz symmetry --- yield four falsifiable predictions with
-quantitative reach estimates: sub-40-$\mu$m inverse-square-law deviations (with the
-$(\alpha,\lambda)$ discovery reach of next-generation torsion-balance experiments computed),
-sub-QED-floor photon--field interactions (with cavity ellipticities computed for current and
-next-generation setups), composition-dependent mass drift with annual-potential tagging (with
-bounds from binary pulsars, mass metrology, and clock comparisons), and phase-dependent galactic
-gravitation --- each with identified experiments capable of deciding them within the current
-decade. Whatever the outcomes, the framework will then have done what a scientific hypothesis is
-supposed to do: expose itself to decisive evidence.
+We have presented the Minimum Energy Quantum framework as a phenomenological proposal for a
+single light-speed substrate from which matter and gravity might emerge. A schematic kinetic
+equation and an effective gravitational field equation make explicit some structures a future
+model would need, but neither is derived from microscopic dynamics here. We also identified four
+conditional tests: short-range Yukawa forces, additional vacuum birefringence, a possible
+exchange-associated mass drift, and a qualitative galaxy-evolution correlation. The first two
+are standard parameterizations with idealized signal estimates; the latter two lack a quantitative
+observable-to-parameter mapping. Existing experiments provide important constraints, but the
+discussion here is not a global consistency analysis and does not establish the substrate
+hypothesis. A decisive next step is to specify the microscopic model, derive its effective
+couplings and conservation laws, and then reassess these tests with realistic data and
+uncertainties.
 
 \appendix
 
 \section{Quantitative Estimates}\label{app:quant}
 
-This appendix collects the numerical estimates behind Predictions 1--3. All values were computed
-from the standard constants ($G = 6.674\times10^{-11}\,$SI, $c = 2.998\times10^{8}\,$m/s,
-$\hbar$, $\alpha_{\rm em}$, $B_c = m_e^2c^2/e\hbar = 4.414\times10^{9}\,$T); the computation
-script accompanies the paper as supplementary material.
+This appendix records two idealized signal estimates. They are illustrative calculations, not
+experimental forecasts or predictions derived from a microscopic \meq{} model. No supplementary
+calculation script is included.
 
-\subsection*{A.1\ \ Yukawa pressure and discovery reach (Prediction 1)}
+\subsection*{A.1\ \ Idealized Yukawa pressure (Test 1)}
 
 For the parallel-plate geometry, Eq.~\eqref{eq:pyuk} gives, for tungsten
 ($\rho = 1.93\times10^{4}\,$kg/m$^3$), $\alpha = 1$:
@@ -730,47 +631,44 @@ $\lambda$ [$\mu$m] & $P_Y(d=\lambda)$ [Pa] & $P_Y(d=2\lambda)$ [Pa] & $P_Y(d=52\
 \end{table}
 
 \noindent
-The E\"ot-Wash 2020 limit ($\alpha = 1$ excluded for $\lambda > 39\,\mu$m at working gap
-$d = 52\,\mu$m) corresponds to a detected pressure $\sim\!3\times10^{-11}\,$Pa. With $A =
-100\,$cm$^2$ of active area at gap $40\,\mu$m, force noise floors of $10^{-15}$/$10^{-16}$/
-$10^{-17}\,$N correspond to $|\alpha|_{\min}(\lambda = 20\,\mu{\rm m}) \approx 1.2\times
-10^{-2}/10^{-3}/10^{-4}$. The Casimir pressure $\pi^2\hbar c/240d^4 = 1.3\times10^{-7}\,$Pa at
-$d = 10\,\mu$m exceeds a gravity-strength Yukawa signal ($5.7\times10^{-12}\,$Pa) by
-$\sim\!2\times10^{4}$ but scales as $d^{-4}$, enabling separation by gap scans.
+At $\lambda=39\,\mu$m and $d=52\,\mu$m, Eq.~\eqref{eq:pyuk} gives
+$P_Y\simeq6.3\times10^{-11}\,$Pa for $\alpha=1$. This is an ideal parallel-plate value, not the
+sensitivity or force limit of the E\"ot-Wash apparatus. For $A=100\,$cm$^2$, gap
+$d=40\,\mu$m, and $\lambda=20\,\mu$m, the same idealized model gives
+$P_Y\simeq8.5\times10^{-12}\alpha\,$Pa. Force noises of $10^{-16}$ and $10^{-17}\,$N would
+therefore correspond to $|\alpha|_{\min}\simeq1.2\times10^{-3}$ and
+$1.2\times10^{-4}$, respectively, before geometric and systematic effects. The Casimir pressure
+for ideal conducting plates at $d=10\,\mu$m is about $1.3\times10^{-7}\,$Pa; real-material,
+finite-geometry, and surface effects must be included in an experimental analysis.
 
-\subsection*{A.2\ \ Vacuum birefringence and the $\zeta$-reach (Prediction 2)}
+\subsection*{A.2\ \ Illustrative vacuum-birefringence signals (Test 2)}
 
-$\Delta n_{\rm QED}(B) = (\alpha_{\rm em}/45\pi)(B/B_c)^2 = 2.65\times10^{-24}\,B^2[\mathrm{T}^2]$;
-$\psi = N_{\rm eff}\,\pi\Delta n L/\lambda_{\rm light}$ with $\lambda_{\rm light} = 1064\,$nm:
+In the weak-field limit, use $\Delta n_{\rm QED}\simeq4.0\times10^{-24}B^2$ with $B$ in tesla.
+For $\lambda_{\rm light}=1064\,$nm, the idealized ellipticity is
+$\psi=N_{\rm eff}\pi\Delta n L/\lambda_{\rm light}$:
 
 \begin{table}[htbp]
 \centering\small
 \caption{Cavity ellipticities of the QED signal and the $\zeta$ reach.}
 \begin{tabular}{@{}lrrrrc@{}}
 \toprule
-Setup & $B$ [T] & $L$ [m] & $N_{\rm eff}$ & $\psi_{\rm QED}$ [rad] & $\zeta_{\min}$ ($10^{-11}\,$rad noise)\\
+Setup & $B$ [T] & $L$ [m] & $N_{\rm eff}$ & $\psi_{\rm QED}$ [rad] & $\zeta_{\min}$ ($10^{-11}\,$rad)\\
 \midrule
-PVLAS (operated)  & 2.5 & 1.0 & $2.5\times10^{5}$ & $1.2\times10^{-11}$ & $\sim\!1$ \\
-PVLAS (upgraded)   & 2.5 & 3.2 & $4.5\times10^{5}$ & $7.0\times10^{-11}$ & $1.4\times10^{-1}$ \\
-OSQAR-class        & 9.0 & 14.3 & $10^{2}$ & $9.1\times10^{-13}$ & $1.1\times10^{1}$ \\
-BMV-class          & 13  & 25 & $6.4\times10^{4}$ & $2.1\times10^{-9}$ & $4.7\times10^{-3}$ \\
+PVLAS-like  & 2.5 & 1.0 & $2.5\times10^{5}$ & $1.8\times10^{-11}$ & $5.4\times10^{-1}$ \\
+PVLAS-like  & 2.5 & 3.2 & $4.5\times10^{5}$ & $1.1\times10^{-10}$ & $9.4\times10^{-2}$ \\
+OSQAR-like  & 9.0 & 14.3 & $10^{2}$ & $1.4\times10^{-12}$ & $7.3$ \\
+BMV-like    & 13  & 25 & $6.4\times10^{4}$ & $3.2\times10^{-9}$ & $3.1\times10^{-3}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection*{A.3\ \ Mass non-stationarity bounds (Prediction 3)}
+\subsection*{A.3\ \ Mass-drift ansatz (Test 3)}
 
-Equation~\eqref{eq:etadrift} with existing limits: Hulse--Taylor
-($|\dot P_b^{\rm anom}|<1.6\times10^{-14}\,$s/s, $g = 50.3\,$m/s$^2$)
-$\Rightarrow \eta < 4.8\times10^{-8}$; double pulsar J0737$-$3039 (conservative
-$10^{-3}\times$GR, $g = 214\,$m/s$^2$) $\Rightarrow \eta < 8.7\times10^{-10}$; laboratory
-composition-differential mass stability ($5\times10^{-9}$/yr) $\Rightarrow
-\eta_{\rm comp} < 4.8\times10^{-9}$; clock-ratio stability ($10^{-16}$/yr) $\Rightarrow
-\eta_{\rm comp} < 10^{-16}$. Annual modulation of a potential-scaled drift
-$\dot m/m = \Gamma\,\Phi/c^2$ has amplitude $\Gamma\times1.7\times10^{-3}\,$s at $f = 1/$yr;
-differential monitoring at $10^{-12}$ probes $\Gamma < 6\times10^{-10}\,$s$^{-1}$. The proposed
-differential experiment (Sec.~\ref{sec:p3}) probes $\eta_{\rm diff} \sim 10^{-8}$--$10^{-11}$,
-between the pulsar and clock bounds --- currently unexplored.
+For $g=9.81\,$m/s$^2$, Eq.~\eqref{eq:etadrift} gives
+$g/c\simeq3.3\times10^{-8}\,$s$^{-1}$, or about $1.0\,$yr$^{-1}$ per unit $\eta$. This is only
+the normalization implied by the ansatz. No pulsar, clock, or laboratory bound on $\eta$ is
+quoted because the manuscript does not derive how Eq.~\eqref{eq:etadrift} changes those
+observables.
 
 \begin{thebibliography}{50}\small
 
@@ -851,12 +749,6 @@ matter and gravity. \emph{Found. Phys.} \textbf{6}, 65 (1976).
 \bibitem{Zloshchastiev2011} Zloshchastiev, K. G. Spontaneous symmetry breaking in a logarithmic
 nonlinear quantum theory. \emph{Acta Phys. Polon. B} \textbf{42}, 261 (2011).
 
-\bibitem{Mansouri1977} Mansouri, R. \& Sexl, R. U. A test theory of special relativity.
-\emph{Gen. Rel. Grav.} \textbf{8}, 497 (1977).
-
-\bibitem{Amelino2002} Amelino-Camelia, G. Doubly-special relativity. \emph{Nature} \textbf{418},
-34 (2002).
-
 \bibitem{Skyrme1962} Skyrme, T. H. R. A unified field theory of mesons and baryons.
 \emph{Nucl. Phys.} \textbf{31}, 556 (1962).
 
@@ -866,9 +758,6 @@ and statistics of solitons. \emph{Phys. Rev. Lett.} \textbf{51}, 2250 (1983).
 
 \bibitem{Wilczek1982} Wilczek, F. Magnetic flux, angular momentum, and statistics.
 \emph{Phys. Rev. Lett.} \textbf{48}, 1144 (1982).
-
-\bibitem{Field1971} Field, G. B. The time relaxation of a resonance-line photon gas.
-\emph{Astrophys. J.} \textbf{167}, 231 (1971).
 
 \bibitem{Carlip2000} Carlip, S. Aberration and the speed of gravity. \emph{Phys. Lett. A}
 \textbf{267}, 81 (2000).
@@ -915,11 +804,6 @@ supernova $B$-band light curves. \emph{Astrophys. J.} \textbf{558}, 359 (2001).
 \bibitem{Lubin2001} Lubin, L. M. \& Sandage, A. The Tolman surface brightness test for the
 reality of the expansion. IV. A measurement of the Tolman signal and the luminosity evolution.
 \emph{Astron. J.} \textbf{122}, 1084 (2001).
-
-\bibitem{Riess1998} Riess, A. G. et al. Observational evidence from supernovae for an
-accelerating universe and a cosmological constant. \emph{Astron. J.} \textbf{116}, 1009 (1998);
-Perlmutter, S. et al. Measurements of $\Omega$ and $\Lambda$ from 42 high-redshift supernovae.
-\emph{Astrophys. J.} \textbf{517}, 565 (1999).
 
 \bibitem{Fixsen1996} Fixsen, D. J. et al. (COBE/FIRAS). The cosmic microwave background spectrum
 from the full COBE FIRAS data set. \emph{Astrophys. J.} \textbf{473}, 576 (1996).
