@@ -1,5 +1,8 @@
-\documentclass[UTF8,11pt,a4paper]{ctexart}
+\documentclass[UTF8,fontset=none,11pt,a4paper]{ctexart}
 
+\setCJKmainfont[AutoFakeBold=2,AutoFakeSlant=.2]{AR PL UMing CN}
+\setCJKsansfont{Droid Sans Fallback}
+\setlength{\emergencystretch}{1em}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{array}
@@ -37,7 +40,7 @@
 
 以下三项经验事实使问题更加具体，但并未解决它：
 \begin{enumerate}
-\item \textbf{自由落体具有高度普适性。}MICROSCOPE 将钛与铂试验体之间的差分加速度约束在 $10^{-15}$ 量级\cite{Touboul2022}；月球激光测距也检验引力自能的响应\cite{Williams2004}。这些结果限制了对普适耦合的偏离。
+\item \textbf{自由落体具有高度普适性。}MICROSCOPE 将钛与铂试验体的差分加速度约束在 $10^{-15}$ 量级\cite{Touboul2022}；月球激光测距也检验引力自能的响应\cite{Williams2004}。这些结果限制了对普适耦合的偏离。
 \item \textbf{引力波的传播速度与 $c$ 一致。}引力波与伽马射线联合观测 GW170817 对两者传播速度之差给出了严格限制\cite{GW170817}。仅凭这一结果，不能确定引力自由度的微观本质或完整偏振结构。
 \item \textbf{光子传播受到严格约束。}伽马射线观测限制了特定形式的能量依赖色散，具体限值取决于所假设的传播模型\cite{Abdo2009,Vasileiou2013}。这些界限约束基底模型，但并未排除所有可能的基底相互作用。
 \end{enumerate}
@@ -108,7 +111,7 @@ T_{\rm sub}^{\mu\nu}(x)=\int dP\,p^\mu p^\nu f(x,p),
 \begin{equation}
 p^\mu\partial_\mu f=C[f,\mathcal{F}],
 \end{equation}
-其中碰撞项 $C$ 和集体场 $\mathcal{F}$ 尚未指定。若基底碰撞项孤立作用，局域守恒需满足 $\int dP\,p^\nu C[f,\mathcal{F}]=0$；若物质与基底交换能量动量，则只有两者的总应力能张量才可能守恒。单次碰撞具有弹性，并不自动意味着相互作用介质中没有加热或阻力。证明这些性质需要微观碰撞核、稳定平衡态，以及能量与动量传递的计算。因此，这些方程只是一个假设框架，而非封闭的动理论；勒萨日模型面临的问题仍是待解决的约束，并未由本文的基本假设消除。
+其中碰撞项 $C$ 和集体场 $\mathcal{F}$ 尚未指定。若基底碰撞项孤立作用，局域守恒需满足\allowbreak $\int dP\,p^\nu C[f,\mathcal{F}]=0$；若物质与基底交换能量动量，则只有两者的总应力能张量才可能守恒。单次碰撞具有弹性，并不自动意味着相互作用介质中没有加热或阻力。证明这些性质需要微观碰撞核、稳定平衡态，以及能量与动量传递的计算。因此，这些方程只是一个假设框架，而非封闭的动理论；勒萨日模型的问题仍是待解决的约束，并未由本文的假设消除。
 
 \subsection{平均场自洽性：诱导引力}\label{sec:induced}
 
